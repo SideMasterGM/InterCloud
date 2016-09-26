@@ -1,0 +1,8 @@
+<?php
+	@session_start();
+	if (@$_SESSION['login'] == true){
+		include ("app/core/Desktop.php");
+	} else {
+		include ("app/core/Enter.php");
+	}
+?>

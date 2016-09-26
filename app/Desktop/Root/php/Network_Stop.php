@@ -1,0 +1,3 @@
+<?php
+	@system("NETSH WLAN STOP HOSTEDNETWORK");
+?>
