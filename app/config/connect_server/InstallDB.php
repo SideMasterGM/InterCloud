@@ -71,6 +71,7 @@
 			usr VARCHAR(255) NOT NULL, 
 			ip VARCHAR(30) NOT NULL, 
 			remember INT NOT NULL DEFAULT '0',
+			stop VARCHAR(2) NOT NULL DEFAULT '-',
 			date_log DATE NOT NULL, 
 			date_log_unix VARCHAR(100) NOT NULL
 		)"
