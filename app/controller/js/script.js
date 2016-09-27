@@ -39,21 +39,31 @@ function start(){
 	});
 
 	$("#LockSession").click(function(){
-		$.ajax({
-			url: "app/controller/php/login.php",
-			type: "post",
-			data: $("#ConfigurationUsernameAdmin").serialize(),
-			success: function(data){
-				if (data == "OK"){
-					$(".InstallationSuccessData").html("<i class='fa fa-check-square fa-lg' aria-hidden='true'><b style='margin-left: 10px;'>Nombre de usuario: </b>" + $("#tmp_username").val() + "</i><br/><i class='fa fa-check-square fa-lg' aria-hidden='true'><b style='margin-left: 10px;'>Contraseña: </b>" + $("#tmp_password").val() + "</i><br/><br/><b>Bien, ahora haz click en Iniciar sesión.</b>");
-					$("#VMCreateUser").click();
-				} else {
-					$(".VerifyInformation").html("Confirme los campos de <b>Contraseña y Repetir contraseña</b> para continuar con la instalación.");
-					$("#ValidateModalProblemUser").click();
+
+		$("#TmpPassword").val($("#mypassword").val());
+
+		if ($("#TmpPassword").val() == ""){
+			$(".VerifyInformation").html("No ha escrito una contraseña para el usuario <b>" + $("#TmpUsername").val() + "</b>, por favor, escríbala y vuelva a intentarlo.");
+			$("#BtnModalLogin").click();
+		} else {
+			$.ajax({
+				url: "app/controller/php/login.php", 
+				type: "post", 
+				data: $("#FormSessionActive").serialize(), 
+				success: function(data){
+					if (data == "OK"){
+						setTimeout(function(){
+							window.location.href="./";
+						}, 400);
+					} else if (data == "Error"){
+						$(".VerifyInformation").html("La contraseña del usuario <b>" + $("#TmpUsername").val() + "</b>, no es correcta, por favor, verifíquela y vuelva a escribirla.");
+						$("#BtnModalLogin").click();
+					}
 				}
-			}
-		});
-		return false;
+			});
+			return false;
+		}
+
 	});
 	
 	$("#BtnLogin").click(function(){

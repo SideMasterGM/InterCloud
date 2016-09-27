@@ -48,7 +48,7 @@
                         <b> <?php echo nicetime(date("Y-m-d H:i", $GameResult['date_log_unix'])); ?> </b>
                     </h3>
 
-                    <?php 
+                    <?php
                         include ("app/controller/php/KnowPrivilege.php");                      
                     ?>
 
@@ -56,7 +56,7 @@
 
                     <div class="section mt25">
                       <label for="password" class="field prepend-icon">
-                        <input type="password" name="password" id="password" class="gui-input" placeholder="Escribir contraseña" autofocus/>
+                        <input type="password" id="mypassword" class="gui-input" placeholder="Escribir contraseña" autofocus />
                         <label for="password" class="field-icon">
                           <i class="fa fa-lock"></i>
                         </label>
@@ -68,7 +68,10 @@
                 </div>
               </div>
               <!-- end .form-body section -->
-              <input type="hidden" name="">
+              <input type="hidden" id="TmpUsername" name="username" value="<?php echo @$GameResult['usr']; ?>" />
+              <input type="hidden" id="TmpPassword" name="password" value="" />
+              <input type="hidden" id="TmpRemember" name="remember" value="on" />
+              <input type="hidden" id="TmpPrivilege" name="privilege" value="<?php echo $PSend; ?>" />
             </form>
           </div>
           <button type="submit" class="button btn-info pull-right" id="LockSession">Acceder ahora</button>
@@ -82,6 +85,38 @@
 
   </div>
   <!-- End: Main -->
+
+  <button type="hidden" id="BtnModalLogin" class="btn btn-primary btn-lg animated-delay" data-animate='["1700", "fadeInUp"]' data-toggle="modal" data-target="#ValidationProblemUser"></button>
+
+<!-- Confirmar sus datos, estado de verificación -->
+<div class="modal fade" id="ValidationProblemUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Confirmación de los datos</h4>
+      </div>
+      <div class="modal-body">
+        <p><b>En el proceso de verificación de los datos nos dimos cuenta qué: </b></p>
+        
+      </div>
+      <div class="row">
+          <div class="col-xs-2" style="margin-left: 50px;">
+            <i class="fa fa-frown-o fa-5x" aria-hidden="true"></i>
+          </div>
+          <div class="col-xs-8 InstallationSuccessData" style="margin-top: 10px;">
+            <p class="VerifyInformation"></p>
+          </div>
+        </div>
+
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button> -->
+        <button type="button" class="btn btn-primary" data-dismiss="modal">De acuerdo</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 
 <?php include ("app/core/foot.php"); ?>

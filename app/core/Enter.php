@@ -66,12 +66,11 @@
 
 						if (@$RAdmin->num_rows > 0){
 							
-						
 							$GetSessions = "SELECT * FROM ".$X."user_sessions WHERE ip='".getIpAddr()."' AND remember='1' AND stop != '/' ORDER BY id DESC LIMIT 1;";
-							$Result = $TCB->query($GetSessions);
+							$RGetSession = $TCB->query($GetSessions);
 							
-							if (@$Result->num_rows > 0){
-								$GameResult = $Result->fetch_array(MYSQLI_ASSOC);
+							if (@$RGetSession->num_rows > 0){
+								$GameResult = $RGetSession->fetch_array(MYSQLI_ASSOC);
 								include ("app/graphic/ScreenLock.php");
 							} else {
 								include ("app/graphic/LoginDesign.php");
