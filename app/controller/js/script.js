@@ -37,6 +37,24 @@ function start(){
 		$("#username").attr("placeholder", "Escriba el nombre de usuario");
 		$("#privilege").val("admin");
 	});
+
+	$("#LockSession").click(function(){
+		$.ajax({
+			url: "app/controller/php/login.php",
+			type: "post",
+			data: $("#ConfigurationUsernameAdmin").serialize(),
+			success: function(data){
+				if (data == "OK"){
+					$(".InstallationSuccessData").html("<i class='fa fa-check-square fa-lg' aria-hidden='true'><b style='margin-left: 10px;'>Nombre de usuario: </b>" + $("#tmp_username").val() + "</i><br/><i class='fa fa-check-square fa-lg' aria-hidden='true'><b style='margin-left: 10px;'>Contraseña: </b>" + $("#tmp_password").val() + "</i><br/><br/><b>Bien, ahora haz click en Iniciar sesión.</b>");
+					$("#VMCreateUser").click();
+				} else {
+					$(".VerifyInformation").html("Confirme los campos de <b>Contraseña y Repetir contraseña</b> para continuar con la instalación.");
+					$("#ValidateModalProblemUser").click();
+				}
+			}
+		});
+		return false;
+	});
 	
 	$("#BtnLogin").click(function(){
 		var UN = $("#username").val(), 
@@ -271,4 +289,16 @@ function GenerateKey(lng) {
   		password += caracteres.charAt(Math.floor(Math.random()*caracteres.length));
   	
   	return password;
+}
+
+function ChangeUser(){
+	$.ajax({
+		url: "app/controller/php/RememberDelete.php",
+		success: function(data){
+			if (data == "OK"){
+				window.location.href="./";
+			}
+		}
+	});
+	return false;
 }

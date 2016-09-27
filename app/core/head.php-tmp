@@ -4,7 +4,7 @@
 <meta name="description" content="TheCodeBrain - Servicio de Intranet Académica">
 <meta name="author" content="TheCodeBrain">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
 <!-- FullCalendar Plugin CSS -->
 <link rel="stylesheet" type="text/css" href="app/controller/src/plugins/vendor/plugins/fullcalendar/fullcalendar.min.css">
 
