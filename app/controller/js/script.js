@@ -37,6 +37,15 @@ function start(){
 		$("#username").attr("placeholder", "Escriba el nombre de usuario");
 		$("#privilege").val("admin");
 	});
+
+	$("#LockSession").click(function(){
+		LoginLockSession();
+	});
+
+	$("#FormSessionActive").submit(function( event ) {
+	  	LoginLockSession();
+	  	event.preventDefault();
+	});
 	
 	$("#BtnLogin").click(function(){
 		var UN = $("#username").val(), 
@@ -142,6 +151,32 @@ function start(){
 		return false;
 
 	});
+}
+
+function LoginLockSession(){
+	$("#TmpPassword").val($("#mypassword").val());
+
+	if ($("#TmpPassword").val() == ""){
+		$(".VerifyInformation").html("No ha escrito una contraseña para el usuario <b>" + $("#TmpUsername").val() + "</b>, por favor, escríbala y vuelva a intentarlo.");
+		$("#BtnModalLogin").click();
+	} else {
+		$.ajax({
+			url: "app/controller/php/login.php", 
+			type: "post", 
+			data: $("#FormSessionActive").serialize(), 
+			success: function(data){
+				if (data == "OK"){
+					setTimeout(function(){
+						window.location.href="./";
+					}, 400);
+				} else if (data == "Error"){
+					$(".VerifyInformation").html("La contraseña del usuario <b>" + $("#TmpUsername").val() + "</b>, no es correcta, por favor, verifíquela y vuelva a escribirla.");
+					$("#BtnModalLogin").click();
+				}
+			}
+		});
+		return false;
+	}
 }
 
 function RootPrivileges(){
@@ -271,4 +306,16 @@ function GenerateKey(lng) {
   		password += caracteres.charAt(Math.floor(Math.random()*caracteres.length));
   	
   	return password;
+}
+
+function ChangeUser(){
+	$.ajax({
+		url: "app/controller/php/RememberDelete.php",
+		success: function(data){
+			if (data == "OK"){
+				window.location.href="./";
+			}
+		}
+	});
+	return false;
 }

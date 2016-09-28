@@ -36,12 +36,10 @@
 
 	if ($Val == true){
 
-		$InSession = "INSERT INTO ".$X."user_sessions (id, usr, ip, remember, date_log, date_log_unix) VALUES ('','".@$_SESSION['username']."','".getIpAddr()."','".@$rm."','".date('Y-n-j')."','".time()."');";
+		$InSession = "INSERT INTO ".$X."user_sessions (id, usr, ip, remember, stop, date_log, date_log_unix) VALUES ('','".@$_SESSION['username']."','".getIpAddr()."','".@$rm."', '','".date('Y-n-j')."','".time()."');";
 		if ($TCB->query($InSession)){
 			echo "OK";
 		}
-
-
 	} else {
 		echo "Error";
 	}

@@ -16,7 +16,7 @@
 
         <div class="row mb15 table-layout">
 
-          <div class="col-xs-6 va-m pln animated-delay" data-animate='["1000","fadeInDown"]' data-toggle="tooltip" data-placement="top" data-original-title="TheCodeBrain Logo">
+          <div class="col-xs-6 va-m pln animated-delay" data-animate='["1000","fadeInDown"]' data-toggle="tooltip" data-placement="top" data-original-title="InterCloud Logo">
             <a href="./">
               <img src="app/controller/src/logo/logo.png" class="img-responsive w250">
             </a>

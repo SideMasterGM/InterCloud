@@ -68,7 +68,7 @@
                   <div class="col-xs-6">
                      <label for="password" class="field-label text-muted fs18 mb10">Base de datos</label>
                     <label for="password" class="field prepend-icon">
-                    <input type="text" name="database" id="InstallDatabase" class="form-control" placeholder="TheCodeBrain" data-toggle="tooltip" data-placement="left" data-original-title="Nombre de base de datos donde se volcarán los datos" required />
+                    <input type="text" name="database" id="InstallDatabase" class="form-control" placeholder="InterCloud" data-toggle="tooltip" data-placement="left" data-original-title="Nombre de base de datos donde se volcarán los datos" required />
                       <label for="password" class="field-icon">
                           <i class="fa fa-database"></i>
                       </label>
@@ -116,7 +116,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Terminos de licencia / TheCodeBrain</h4>
+        <h4 class="modal-title" title="Licencia TheCodeBrain / InterCloud" id="myModalLabel">Terminos de licencia / TCB InterCloud</h4>
       </div>
       <div class="modal-body">
         <p><b>Algún título por aquí de prueba</b></p>
@@ -153,7 +153,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Confirme sus datos / TheCodeBrain</h4>
+        <h4 class="modal-title" id="myModalLabel">Confirme sus datos</h4>
       </div>
       <div class="modal-body">
         <p><b>En el proceso de verificación de los datos nos dimos cuenta qué: </b></p>
@@ -178,7 +178,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Instalación completada / TheCodeBrain</h4>
+        <h4 class="modal-title" id="myModalLabel">Instalación completada</h4>
       </div>
       <div class="modal-body">
         <p><b>¡Que emoción!, ahora ya estamos listos.</b></p>

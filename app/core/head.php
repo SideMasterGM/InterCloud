@@ -1,8 +1,8 @@
 <meta charset="utf-8">
-<title>TheCodeBrain - Intranet</title>
-<meta name="keywords" content="TheCodeBrain - Servicio de Intranet Académica" />
-<meta name="description" content="TheCodeBrain - Servicio de Intranet Académica">
-<meta name="author" content="TheCodeBrain">
+<title>InterCloud - Intranet</title>
+<meta name="keywords" content="TheCodeBrain / InterCloud - Servicio de Intranet Académica" />
+<meta name="description" content="TheCodeBrain / InterCloud - Servicio de Intranet Académica">
+<meta name="author" content="TheCodeBrain / InterCloud">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
 <!-- FullCalendar Plugin CSS -->

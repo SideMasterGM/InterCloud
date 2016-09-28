@@ -120,7 +120,7 @@
                 <div class="portfolio-box">
                   <figure class="image-hover"> <img src="images/resource/360.png" alt="showcase">
                     <figcaption>
-                      <div class="h4">TheCodeBrain</div>
+                      <div class="h4">InterCloud</div>
                       <p>Code the world!</p>
                   </figure>
                 </div>
@@ -129,7 +129,7 @@
                 <div class="portfolio-box">
                   <figure class="image-hover"> <img src="images/resource/360.png" alt="showcase">
                     <figcaption>
-                      <div class="h4">TheCodeBrain</div>
+                      <div class="h4">InterCloud</div>
                       <p>Code the world!</p>
                   </figure>
                 </div>
@@ -138,7 +138,7 @@
                 <div class="portfolio-box">
                   <figure class="image-hover"> <img src="images/resource/360.png" alt="showcase">
                     <figcaption>
-                      <div class="h4">TheCodeBrain</div>
+                      <div class="h4">InterCloud</div>
                       <p>Coding the world!</p>
                   </figure>
                 </div>
@@ -147,7 +147,7 @@
                 <div class="portfolio-box">
                   <figure class="image-hover"> <img src="images/resource/360.png" alt="showcase">
                     <figcaption>
-                      <div class="h4">TheCodeBrain</div>
+                      <div class="h4">InterCloud</div>
                       <p>Coding the world!</p>
                   </figure>
                 </div>
@@ -156,7 +156,7 @@
                 <div class="portfolio-box">
                   <figure class="image-hover"> <img src="images/resource/360.png" alt="showcase">
                     <figcaption>
-                      <div class="h4">TheCodeBrain</div>
+                      <div class="h4">InterCloud</div>
                       <p>Cdding the world!</p>
                   </figure>
                 </div>
@@ -165,7 +165,7 @@
                 <div class="portfolio-box">
                   <figure class="image-hover"> <img src="images/resource/360.png" alt="showcase">
                     <figcaption>
-                      <div class="h4">TheCodeBrain</div>
+                      <div class="h4">InterCloud</div>
                       <p>Coding the world!</p>
                   </figure>
                 </div>
@@ -174,7 +174,7 @@
                 <div class="portfolio-box">
                   <figure class="image-hover"> <img src="images/resource/360.png" alt="showcase">
                     <figcaption>
-                      <div class="h4">TheCodeBrain</div>
+                      <div class="h4">InterCloud</div>
                       <p>Coding the world!</p>
                   </figure>
                 </div>
@@ -183,7 +183,7 @@
                 <div class="portfolio-box">
                   <figure class="image-hover"> <img src="images/resource/360.png" alt="showcase">
                     <figcaption>
-                      <div class="h4">TheCodeBrain</div>
+                      <div class="h4">InterCloud</div>
                       <p>Coding the world!</p>
                   </figure>
                 </div>
@@ -192,7 +192,7 @@
                 <div class="portfolio-box">
                   <figure class="image-hover"> <img src="images/resource/360.png" alt="showcase">
                     <figcaption>
-                      <div class="h4">TheCodeBrain</div>
+                      <div class="h4">InterCloud</div>
                       <p>Coding the world!</p>
                   </figure>
                 </div>
@@ -626,7 +626,7 @@
   
   <!-- site-btm -->
   <footer class="site-btm">
-    <p>© 2016 thecodebrain,  All Rights Reserved</p>
+    <p>© <?php echo date("Y"); ?> TheCodeBrain / InterCloud,  All Rights Reserved</p>
   </footer>
 </main>
 
