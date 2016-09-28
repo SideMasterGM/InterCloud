@@ -18,7 +18,7 @@
 		@$X = rtrim($ArrayFileConfig[4]);
 
 		if (strlen($H) == 12){
-			$H = substr($H, 3);
+			@$H = substr($H, 3);
 		}
 
 		@$TCB = new InterCloud($H, $U, $P, $D);
