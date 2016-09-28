@@ -15,7 +15,7 @@
 		$U = rtrim($ArrayFileConfig[1]);
 		$P = rtrim($ArrayFileConfig[2]);
 		$D = rtrim($ArrayFileConfig[3]);
-		$X = rtrim($ArrayFileConfig[4]);
+		@$X = rtrim($ArrayFileConfig[4]);
 
 		if (strlen($H) == 12){
 			$H = substr($H, 3);
