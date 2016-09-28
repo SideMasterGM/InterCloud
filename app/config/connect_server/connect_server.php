@@ -15,7 +15,11 @@
 		@$U = rtrim($ArrayFileConfig[1]);
 		@$P = rtrim($ArrayFileConfig[2]);
 		@$D = rtrim($ArrayFileConfig[3]);
-		@$X = rtrim($ArrayFileConfig[4]);
+		
+		if (!isset($ArrayFileConfig[4]))
+			$X = "";
+		else
+			$X = rtrim($ArrayFileConfig[4]);
 
 		if (strlen($H) == 12){
 			@$H = substr($H, 3);
@@ -28,8 +32,8 @@
 		} else {
 			$error = false;
 			
-			if (@$X != "")
-				@$X .= "_";
+			if ($X != "")
+				$X .= "_";
 			
 			if (!@$TCB->query("SET NAMES 'utf8'"))
 				$error = true;
