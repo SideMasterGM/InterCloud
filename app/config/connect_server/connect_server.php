@@ -11,10 +11,10 @@
 	if (file_exists($t)){
 		$ArrayFileConfig = file($t);
 		
-		$H = rtrim($ArrayFileConfig[0]);
-		$U = rtrim($ArrayFileConfig[1]);
-		$P = rtrim($ArrayFileConfig[2]);
-		$D = rtrim($ArrayFileConfig[3]);
+		@$H = rtrim($ArrayFileConfig[0]);
+		@$U = rtrim($ArrayFileConfig[1]);
+		@$P = rtrim($ArrayFileConfig[2]);
+		@$D = rtrim($ArrayFileConfig[3]);
 		@$X = rtrim($ArrayFileConfig[4]);
 
 		if (strlen($H) == 12){
@@ -28,8 +28,8 @@
 		} else {
 			$error = false;
 			
-			if ($X != "")
-				$X .= "_";
+			if (@$X != "")
+				@$X .= "_";
 			
 			if (!@$TCB->query("SET NAMES 'utf8'"))
 				$error = true;
