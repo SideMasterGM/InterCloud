@@ -1,5 +1,5 @@
 <?php
-	class TheCodeBrain extends mysqli {
+	class InterCloud extends mysqli {
 		public function __construct($host, $user, $pass, $db){
 			@parent::__construct($host, $user, $pass, $db);
 		}
@@ -21,7 +21,7 @@
 			$H = substr($H, 3);
 		}
 
-		@$TCB = new TheCodeBrain($H, $U, $P, $D);
+		@$TCB = new InterCloud($H, $U, $P, $D);
 		
 		if (@$TCB->connect_error){
 			$error = true;

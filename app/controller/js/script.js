@@ -39,31 +39,12 @@ function start(){
 	});
 
 	$("#LockSession").click(function(){
+		LoginLockSession();
+	});
 
-		$("#TmpPassword").val($("#mypassword").val());
-
-		if ($("#TmpPassword").val() == ""){
-			$(".VerifyInformation").html("No ha escrito una contraseña para el usuario <b>" + $("#TmpUsername").val() + "</b>, por favor, escríbala y vuelva a intentarlo.");
-			$("#BtnModalLogin").click();
-		} else {
-			$.ajax({
-				url: "app/controller/php/login.php", 
-				type: "post", 
-				data: $("#FormSessionActive").serialize(), 
-				success: function(data){
-					if (data == "OK"){
-						setTimeout(function(){
-							window.location.href="./";
-						}, 400);
-					} else if (data == "Error"){
-						$(".VerifyInformation").html("La contraseña del usuario <b>" + $("#TmpUsername").val() + "</b>, no es correcta, por favor, verifíquela y vuelva a escribirla.");
-						$("#BtnModalLogin").click();
-					}
-				}
-			});
-			return false;
-		}
-
+	$("#FormSessionActive").submit(function( event ) {
+	  	LoginLockSession();
+	  	event.preventDefault();
 	});
 	
 	$("#BtnLogin").click(function(){
@@ -170,6 +151,32 @@ function start(){
 		return false;
 
 	});
+}
+
+function LoginLockSession(){
+	$("#TmpPassword").val($("#mypassword").val());
+
+	if ($("#TmpPassword").val() == ""){
+		$(".VerifyInformation").html("No ha escrito una contraseña para el usuario <b>" + $("#TmpUsername").val() + "</b>, por favor, escríbala y vuelva a intentarlo.");
+		$("#BtnModalLogin").click();
+	} else {
+		$.ajax({
+			url: "app/controller/php/login.php", 
+			type: "post", 
+			data: $("#FormSessionActive").serialize(), 
+			success: function(data){
+				if (data == "OK"){
+					setTimeout(function(){
+						window.location.href="./";
+					}, 400);
+				} else if (data == "Error"){
+					$(".VerifyInformation").html("La contraseña del usuario <b>" + $("#TmpUsername").val() + "</b>, no es correcta, por favor, verifíquela y vuelva a escribirla.");
+					$("#BtnModalLogin").click();
+				}
+			}
+		});
+		return false;
+	}
 }
 
 function RootPrivileges(){
