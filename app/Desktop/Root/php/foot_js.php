@@ -1,4 +1,5 @@
   <script src="app/controller/src/plugins/vendor/jquery/jquery-1.11.1.min.js"></script>
+ 
   <script src="app/controller/src/plugins/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
 
   <!-- HighCharts Plugin -->
@@ -25,6 +26,8 @@
    <script src="app/controller/js/script.js"></script>
    <script src="app/Desktop/Root/js/RootScript.js"></script>
   <script type="text/javascript">
+ 
+
   jQuery(document).ready(function() {
 
     "use strict";

@@ -165,3 +165,20 @@ $("#dropdown-Apache").click(function(){
 		}, 50);
 	}
 });
+
+var GlobalX = 0, GlobalY = 0;
+
+$(document).mousemove(function(event){	
+    GlobalX = event.clientX;
+    GlobalY = event.clientY;
+
+    setTimeout(function(){
+      if (GlobalX == event.clientX && GlobalY == event.clientY){
+        CountNow = setTimeout(function(){
+        	window.location.href="app/controller/php/logout.php";
+        }, 299000);
+      } else if (GlobalX != event.clientX || GlobalY != event.clientY) {
+        clearTimeout(CountNow);
+      }
+    }, 1000);
+});
