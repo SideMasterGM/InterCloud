@@ -44,7 +44,7 @@ function start(){
 
 	$("#FormSessionActive").submit(function( event ) {
 	  	LoginLockSession();
-	  	event.preventDefault();
+	  	event.preventDefault(); 
 	});
 	
 	$("#BtnLogin").click(function(){
@@ -166,9 +166,7 @@ function LoginLockSession(){
 			data: $("#FormSessionActive").serialize(), 
 			success: function(data){
 				if (data == "OK"){
-					setTimeout(function(){
-						window.location.href="./";
-					}, 400);
+					window.location.href="./";
 				} else if (data == "Error"){
 					$(".VerifyInformation").html("La contraseña del usuario <b>" + $("#TmpUsername").val() + "</b>, no es correcta, por favor, verifíquela y vuelva a escribirla.");
 					$("#BtnModalLogin").click();
@@ -313,7 +311,9 @@ function ChangeUser(){
 		url: "app/controller/php/RememberDelete.php",
 		success: function(data){
 			if (data == "OK"){
-				window.location.href="./";
+				setTimeout(function(){
+					window.location.href="./";
+				}, 200);
 			}
 		}
 	});

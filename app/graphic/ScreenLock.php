@@ -63,7 +63,7 @@
                       </label>
                     </div>
                     <!-- end section -->
-                    <button type="submit" class="button btn-info pull-right" id="LockSession">Acceder ahora</button>
+                    <button type="button" class="button btn-info pull-right" id="LockSession">Acceder ahora</button>
                   </div>
                 </div>
               </div>

@@ -75,7 +75,6 @@
 							} else {
 								include ("app/graphic/LoginDesign.php");
 							}
-							exit();
 						} else {
 							include ("app/graphic/RunLogUser.php");
 						}
