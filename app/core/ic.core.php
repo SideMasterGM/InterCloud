@@ -11,72 +11,53 @@
 			include ("app/config/connect_server/ic.connect_server.php");
 
 			if (file_exists($fn)){
-				// echo "Uno";
 				if ($error == true){
-					// echo "Dos: ";
 					$CodeError = @$TCB->connect_errno;
 					$MessageError = @$TCB->connect_error;
 					
-					// if ($CodeError == 1045){
-					// 	echo "Problema con la credencial: ".$MessageError;
-					// }
-
 					if ($CodeError == 1049){
-						// echo "Tres";
 						$ArrayError = explode("'", $MessageError);
 
 						if (file_exists($inst)){
-							// echo "Cuatro";
 							include ("app/config/install/view/ic.InstallDesign.php");
 
-							if ($ArrayError[0] == "Unknown database "){
+							if ($ArrayError[0] == "Unknown database ")
 								include ("app/graphic/ic.message.unknowndb.php");
-							}
 						} else {
-							// echo "Cinco";
 							@exec("start notepad ".$fn);
 							header("Location: ./");
 						}
 					}
 
 					if ($CodeError == 2002){ //Error de Host
-
 						if (file_exists($inst)){
-							// echo "Cuatro";
 							include ("app/config/install/view/ic.InstallDesign.php");
 
-							if ($ArrayError[0] == "Unknown database "){
+							if ($ArrayError[0] == "Unknown database ")
 								include ("app/graphic/ic.message.unknowndb.php");
-							}
 						} else {
-							// echo "Seis";
 							@exec("start notepad ".$fn);
 							header("Location: ./");
 						}
-
 					}
-
-
 				} else {
-					// echo "Siete";
 					$URoot = $TCB->query("SELECT * FROM ".$X."root;");
 
 					if (@$URoot->num_rows != 0){
 						$RAdmin = $TCB->query("SELECT * FROM ".$X."admin;");
 
 						if (@$RAdmin->num_rows > 0){
-							
 							$GetSessions = "SELECT * FROM ".$X."user_sessions WHERE ip='".getIpAddr()."' AND remember='1' ORDER BY id DESC LIMIT 1;";
 							$RGetSession = $TCB->query($GetSessions);
 							
 							if (@$RGetSession->num_rows > 0){
 								@$GameResult = $RGetSession->fetch_array(MYSQLI_ASSOC);
 								
-								if ($GameResult['stop'] == "/"){
+								if ($GameResult['stop'] == "/")
 									include ("app/graphic/ic.LoginDesign.php");
-								} else {
+								else
 									include ("app/graphic/ic.ScreenLock.php");
-								}
+
 							} else {
 								include ("app/graphic/ic.LoginDesign.php");
 							}
@@ -84,18 +65,14 @@
 							include ("app/graphic/ic.RunLogUser.php");
 						}
 					} else {
-						// echo "Ocho";
 						include ("app/config/connect_server/ic.InstallDB.php");
 						header("Location: ./");
 					}
 				}
 			} else {
-				// echo "Nueve";
 				if (file_exists($inst)){
-					// echo "Diez";
 					include ("app/config/install/view/ic.InstallDesign.php");
 				} else {
-					// echo "Once";
 					CFC($fn);
 					@exec("start notepad ".$fn);
 					sleep(1);
