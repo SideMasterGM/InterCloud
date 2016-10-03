@@ -13,7 +13,7 @@ function start(){
 		$("#btn_session").text("Maestro");
 		$("#btn_session").attr("data-content", "Acceder con privilegios de Maestro.");
 		$(".LbUsername").text("Número de Carnet");
-		$("#username").attr("placeholder", "Escriba su número de carnet: ## - #### - ##");
+		$("#username").attr("placeholder", "Escriba sun úmero de carnet: ## - #### - ##");
 		$("#privilege").val("master");
 	});
 	$("#Estudiante").click(function(){
@@ -197,7 +197,7 @@ function compruebaTecla(evt){
     var tecla = evt.which || evt.keyCode;
     if (tecla == 17){
     	CountKey++;
-    	if (CountKey == 5){
+    	if (CountKey == 2){
        		$("#NewOption").append("<li class='divider' id='DividerRoot'></li><li onclick='RootPrivileges()' id='Root'><a href='#'>Root</a></li>");
        	} else if (CountKey > 5){
        		$("#DividerRoot").remove();
