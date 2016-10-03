@@ -32,8 +32,8 @@
 		}
 	}
 
-	include ("../connect_server/connect_server.php");
-	include ("../connect_server/InstallDB.php");
+	include ("../connect_server/ic.connect_server.php");
+	include ("../connect_server/ic.InstallDB.php");
 
 	if ($error == false)
 		echo "OK";

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<?php include ("app/core/head.php"); ?>
+		<?php include ("app/core/ic.head.php"); ?>
 	</head>
 	<body class="external-page sb-l-c sb-r-c">
 		<?php
 			$inst = "app/config/install";
 
 			$fn = "app/config/Config.tcb";
-			include ("app/config/connect_server/connect_server.php");
+			include ("app/config/connect_server/ic.connect_server.php");
 
 			if (file_exists($fn)){
 				// echo "Uno";
@@ -27,10 +27,10 @@
 
 						if (file_exists($inst)){
 							// echo "Cuatro";
-							include ("app/config/install/view/InstallDesign.php");
+							include ("app/config/install/view/ic.InstallDesign.php");
 
 							if ($ArrayError[0] == "Unknown database "){
-								include ("app/graphic/message.unknowndb.php");
+								include ("app/graphic/ic.message.unknowndb.php");
 							}
 						} else {
 							// echo "Cinco";
@@ -43,10 +43,10 @@
 
 						if (file_exists($inst)){
 							// echo "Cuatro";
-							include ("app/config/install/view/InstallDesign.php");
+							include ("app/config/install/view/ic.InstallDesign.php");
 
 							if ($ArrayError[0] == "Unknown database "){
-								include ("app/graphic/message.unknowndb.php");
+								include ("app/graphic/ic.message.unknowndb.php");
 							}
 						} else {
 							// echo "Seis";
@@ -73,19 +73,19 @@
 								@$GameResult = $RGetSession->fetch_array(MYSQLI_ASSOC);
 								
 								if ($GameResult['stop'] == "/"){
-									include ("app/graphic/LoginDesign.php");
+									include ("app/graphic/ic.LoginDesign.php");
 								} else {
-									include ("app/graphic/ScreenLock.php");
+									include ("app/graphic/ic.ScreenLock.php");
 								}
 							} else {
-								include ("app/graphic/LoginDesign.php");
+								include ("app/graphic/ic.LoginDesign.php");
 							}
 						} else {
-							include ("app/graphic/RunLogUser.php");
+							include ("app/graphic/ic.RunLogUser.php");
 						}
 					} else {
 						// echo "Ocho";
-						include ("app/config/connect_server/InstallDB.php");
+						include ("app/config/connect_server/ic.InstallDB.php");
 						header("Location: ./");
 					}
 				}
@@ -93,7 +93,7 @@
 				// echo "Nueve";
 				if (file_exists($inst)){
 					// echo "Diez";
-					include ("app/config/install/view/InstallDesign.php");
+					include ("app/config/install/view/ic.InstallDesign.php");
 				} else {
 					// echo "Once";
 					CFC($fn);

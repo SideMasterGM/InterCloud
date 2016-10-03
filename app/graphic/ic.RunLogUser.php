@@ -175,4 +175,4 @@
   </div>
 </div>
 
-<?php include ("app/core/foot.php"); ?>
+<?php include ("app/core/ic.foot.php"); ?>

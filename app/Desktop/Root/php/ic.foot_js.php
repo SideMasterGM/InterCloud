@@ -23,8 +23,8 @@
 
   <!-- Widget Javascript -->
   <script src="app/controller/src/plugins/assets/js/demo/widgets.js"></script>
-   <script src="app/controller/js/script.js"></script>
-   <script src="app/Desktop/Root/js/RootScript.js"></script>
+   <script src="app/controller/js/ic.script.js"></script>
+   <script src="app/Desktop/Root/js/ic.RootScript.js"></script>
   <script type="text/javascript">
  
 

@@ -1,6 +1,6 @@
 <?php 
 	$fn = "../../config/Config.tcb";
-	include ("../../config/connect_server/connect_server.php");
+	include ("../../config/connect_server/ic.connect_server.php");
 
 	$GetSessions = "SELECT * FROM ".$X."user_sessions WHERE ip='".getIpAddr()."' AND remember='1' AND stop != '/' ORDER BY id DESC LIMIT 1;";
 	$Result = $TCB->query($GetSessions)->fetch_array(MYSQLI_ASSOC);

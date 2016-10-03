@@ -12,7 +12,7 @@
   <script src="app/controller/src/plugins/assets/js/utility/utility.js"></script>
   <script src="app/controller/src/plugins/assets/js/demo/demo.js"></script>
   <script src="app/controller/src/plugins/assets/js/main.js"></script>
-  <script src="app/controller/js/script.js"></script>
+  <script src="app/controller/js/ic.script.js"></script>
 
   <!-- Page Javascript -->
   <script type="text/javascript">

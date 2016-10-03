@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<?php include ("app/core/head.php"); ?>
+		<?php include ("app/core/ic.head.php"); ?>
 	</head>
 		<?php
 			if (@$_SESSION['p'] == "root")

@@ -12,7 +12,7 @@
 		$un = addslashes($un);
 
 	$fn = "../../config/Config.tcb";
-	include ("../../config/connect_server/connect_server.php");
+	include ("../../config/connect_server/ic.connect_server.php");
 
 	$un = $TCB->real_escape_string($un);
 

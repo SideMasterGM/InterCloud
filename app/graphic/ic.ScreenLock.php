@@ -1,4 +1,4 @@
-<?php include ("app/controller/php/CalcDate.php"); ?>
+<?php include ("app/controller/php/ic.CalcDate.php"); ?>
 
 <!-- Start: Main -->
   <div id="main" class="animated fadeIn">
@@ -18,7 +18,7 @@
           <div class="row mb15 table-layout">
 
             <div class="col-xs-6 pln">
-              <a href="dashboard.html" title="InterCloud Logo">
+              <a href="./" title="InterCloud Logo">
                 <img src="app/controller/src/logo/logo.png" title="InterCloud Logo" class="img-responsive w250">
               </a>
             </div>
@@ -49,7 +49,7 @@
                     </h3>
 
                     <?php
-                        include ("app/controller/php/KnowPrivilege.php");                      
+                        include ("app/controller/php/ic.KnowPrivilege.php");                      
                     ?>
 
                     <p class="text-muted"> <?php echo $Privilege; ?> </p>
@@ -119,4 +119,4 @@
 </div>
 
 
-<?php include ("app/core/foot.php"); ?>
+<?php include ("app/core/ic.foot.php"); ?>

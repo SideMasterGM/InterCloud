@@ -1,6 +1,6 @@
 <?php
 	$fn = "../../config/Config.tcb";
-	include ("../../config/connect_server/connect_server.php");
+	include ("../../config/connect_server/ic.connect_server.php");
 
 	$UN = $_POST['tmp_username'];
 	$PW = $_POST['tmp_password'];

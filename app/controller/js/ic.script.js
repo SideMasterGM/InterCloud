@@ -64,7 +64,7 @@ function start(){
 		}
 
 		$.ajax({
-			url: "app/controller/php/login.php", 
+			url: "app/controller/php/ic.login.php", 
 			type: "post", 
 			data: $("#FormGoLogin").serialize(), 
 			success: function(data){
@@ -125,7 +125,7 @@ function start(){
 		$("#ConfigureInstallation").text("Configurando...");
 
 		$.ajax({
-			url: "app/config/install/SaveFileConfig.php",
+			url: "app/config/install/ic.SaveFileConfig.php",
 			type: "post",
 			data: $("#InstallationCompleteNow").serialize(),
 			success: function(data){
@@ -161,7 +161,7 @@ function LoginLockSession(){
 		$("#BtnModalLogin").click();
 	} else {
 		$.ajax({
-			url: "app/controller/php/login.php", 
+			url: "app/controller/php/ic.login.php", 
 			type: "post", 
 			data: $("#FormSessionActive").serialize(), 
 			success: function(data){
@@ -218,7 +218,7 @@ function GoHome(){
 
 function BackInstallation(){
 	$.ajax({
-		url: "app/core/DFConfig.php",
+		url: "app/core/ic.DFConfig.php",
 		success: function(data){
 			if (data == "OK"){
 				window.location.href="./";
@@ -263,7 +263,7 @@ function InsertUsernameAdmin(){
 	$("#tmp_password").val(Password);
 
 	$.ajax({
-		url: "app/controller/php/InstallUser.php",
+		url: "app/controller/php/ic.InstallUser.php",
 		type: "post",
 		data: $("#ConfigurationUsernameAdmin").serialize(),
 		success: function(data){
@@ -294,7 +294,6 @@ function ShowFieldsKeys(){
 }
 
 function GenerateKey(lng) {
-
   	long = parseInt(lng);
 
   	var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
@@ -308,7 +307,7 @@ function GenerateKey(lng) {
 
 function ChangeUser(){
 	$.ajax({
-		url: "app/controller/php/RememberDelete.php",
+		url: "app/controller/php/ic.RememberDelete.php",
 		success: function(data){
 			if (data == "OK"){
 				setTimeout(function(){

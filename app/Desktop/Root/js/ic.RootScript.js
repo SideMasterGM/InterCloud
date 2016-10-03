@@ -14,7 +14,7 @@ $(".savechange").click(function(){
 
 $("#DetailsNetwork").click(function(){
 	$.ajax({
-		url: "app/Desktop/Root/php/GetNetworkData.php",
+		url: "app/Desktop/Root/php/ic.GetNetworkData.php",
 		success: function(data){
 			$("#FormAppendDataDetails").html(data);
 		}
@@ -23,7 +23,7 @@ $("#DetailsNetwork").click(function(){
 
 $("#HistoryNetwork").click(function(){
 	$.ajax({
-		url: "app/Desktop/Root/php/GetNetworkHistory.php",
+		url: "app/Desktop/Root/php/ic.GetNetworkHistory.php",
 		success: function(data){
 			$(".HereBreakHistory").html(data);
 		}
@@ -31,12 +31,12 @@ $("#HistoryNetwork").click(function(){
 });
 
 $("#LogoutRoot").click(function(){
-	window.location.href="app/controller/php/logout.php";
+	window.location.href="app/controller/php/ic.logout.php";
 });
 
 function AddNetwork(){
 	$.ajax({
-		url: "app/Desktop/Root/php/AddNet.php",
+		url: "app/Desktop/Root/php/ic.AddNet.php",
 		type: "post",
 		data: $("#FormCreateNetwork").serialize(),
 		success: function(data){
@@ -72,7 +72,7 @@ $("#dropdown-Network").click(function(){
 		$("#title_sm").val("Ejecutando red");
 		$("#content_sm").val("Red hospedada...");
 
-		$.ajax("app/Desktop/Root/php/Create_Network.php").fail(function() { 
+		$.ajax("app/Desktop/Root/php/ic.Create_Network.php").fail(function() { 
 			$("#content_sm").val("Ha ocurrido un problema al intentar iniciar MySQL");
 		});
 
@@ -85,7 +85,7 @@ $("#dropdown-Network").click(function(){
 		$("#title_sm").val("Apagando red");
 		$("#content_sm").val("Red hospedada...");
 
-		$.ajax("app/Desktop/Root/php/Network_Stop.php").fail(function() { 
+		$.ajax("app/Desktop/Root/php/ic.Network_Stop.php").fail(function() { 
 			$("#content_sm").val("Ha ocurrido un problema al intentar apagar MySQL");
 		});
 
@@ -175,7 +175,7 @@ $(document).mousemove(function(event){
     setTimeout(function(){
       if (GlobalX == event.clientX && GlobalY == event.clientY){
         CountNow = setTimeout(function(){
-        	window.location.href="app/controller/php/logout.php";
+        	window.location.href="app/controller/php/ic.logout.php";
         }, 299000);
       } else if (GlobalX != event.clientX || GlobalY != event.clientY) {
         clearTimeout(CountNow);
