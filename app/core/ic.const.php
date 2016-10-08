@@ -9,9 +9,11 @@
 	define ("PD_APP", $Path."/app");
 
 	define ("PD_CONFIG", $Path."/app/config");
-		define ("PD_CONNECT_SERVER", $Path."/app/config/connect_server/");
+		define ("PD_CONNECT_SERVER", $Path."/app/config/connect_server");
 			define ("PF_CONNECT_SERVER", $Path."/app/config/connect_server/ic.connect_server.php");
 			define ("PF_INSTALLDB", $Path."/app/config/connect_server/ic.InstallDB.php");
+		define ("PD_INSTALL", $Path."/app/config/install");
+			define ("PD_INSTALL_VIEW", $Path."/app/config/install/view");
 		define ("PF_CONFIG", $Path."/app/config/Config.tcb");
 
 	define ("PD_CONTROLLER", $Path."/app/controller");
@@ -21,8 +23,10 @@
 	define ("PD_CORE", "/app/core");
 		define ("PD_CORE_SERVICES", $Path."/app/core/Services");
 		
+		define ("PF_CORE_HEAD", $Path."/app/core/ic.head.php");
 		define ("PF_CORE", $Path."/app/core/ic.core.php");
 		define ("PF_DESKTOP", $Path."/app/core/ic.desktop.php");
+		define ("PF_CORE_FOOT", $Path."/app/core/ic.foot.php");
 		
 	define ("PD_DESKTOP", $Path."/app/Desktop");
 	define ("PD_GRAPHIC", $Path."/app/graphic");

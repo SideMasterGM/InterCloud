@@ -46,5 +46,29 @@
 			indicando que no hay error.*/
 		}
 
+		public function CFC($fn){
+			@touch($fn);
+			@chmod($fn, 0744);
+
+			$rf = @fopen($fn, "w");
+			fwrite($rf, "Host".PHP_EOL);
+			fwrite($rf, "Nombre de usuario".PHP_EOL);
+			fwrite($rf, "Contraseña".PHP_EOL);
+			fwrite($rf, "Nombre de la base de datos".PHP_EOL);
+			fwrite($rf, "Prefijo");
+
+			fclose($rf);
+
+			return;
+		}
+
+		public function getIpAddr(){
+	        if (!empty(@$_SERVER['HTTP_CLIENT_IP']))
+	            return @$_SERVER['HTTP_CLIENT_IP'];
+	        else if (!empty(@$_SERVER['HTTP_X_FORWARDED_FOR']))
+	            return @$_SERVER['HTTP_X_FORWARDED_FOR'];
+	        return @$_SERVER['REMOTE_ADDR'];
+	    }
+
 	}
 ?>
