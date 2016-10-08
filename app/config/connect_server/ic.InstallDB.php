@@ -1,5 +1,4 @@
 <?php
-
 	$tables = array($X.'root_info' => "CREATE TABLE ".$X."root_info (
 			username VARCHAR(50) NOT NULL, 
 			date_log DATE NOT NULL, 

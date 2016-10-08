@@ -5,7 +5,7 @@
 		}
 	}
 
-	$t = isset($fn) ? $fn : "../Config.tcb";
+	$t = $_SERVER['DOCUMENT_ROOT']."/app/config/Config.tcb";
 	$error = false;
 
 	if (file_exists($t)){

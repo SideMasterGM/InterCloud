@@ -1,40 +1,17 @@
 <?php
+	/*Se incluye el fichero que contiene las constantes, listas para ser llamadas*/
 	include ($_SERVER['DOCUMENT_ROOT']."/app/core/ic.const.php");
-	$fn = PF_CONFIG;
 
-	CreateFile($fn);
-	ConfirmFile($fn);
-
-	function CreateFile($fn){
-		touch($fn);
-		chmod($fn, 0744);
-
-		$MyFile = @fopen($fn, "w");
-		fwrite($MyFile, $_POST['host'].PHP_EOL);
-		fwrite($MyFile, $_POST['username'].PHP_EOL);
-		fwrite($MyFile, $_POST['password'].PHP_EOL);
-		fwrite($MyFile, $_POST['database'].PHP_EOL);
-		fwrite($MyFile, $_POST['prefix']);
-
-		fclose($MyFile);
-
-		return;
-	}
-
-	function ConfirmFile($fn){
-		if (file_exists($fn)){
-			if (!is_readable($fn) && !is_writable($fn)){
-				CreateFile($fn);
-			} else {
-				$error = false;
-			}
-		} else {
-			CreateFile($fn);
-		}
-	}
-
-	include ("../connect_server/ic.connect_server.php");
-	include ("../connect_server/ic.InstallDB.php");
+	/*Se incluye una clase que contiene los métodos necesarios para realizar las operaciones de configuración*/
+	include (PD_CONTROLLER_PHP."/ic.config.class.php");
+	
+	$Config = new ConfigFile();
+	$Config->CreateFile(PF_CONFIG, $_POST);
+	$Config->ConfirmFile(PF_CONFIG);
+	
+	/*Se hace la conexión al servidor y se crean las tablas en la base de datos*/
+	include (PF_CONNECT_SERVER);
+	include (PF_INSTALLDB);
 
 	if ($error == false)
 		echo "OK";

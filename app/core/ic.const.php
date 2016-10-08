@@ -9,7 +9,7 @@
 	define ("PD_APP", $Path."/app");
 
 	define ("PD_CONFIG", $Path."/app/config");
-		define ("PD_CONFIG_CONNECT_SERVER", $Path."/app/config/connect_server/");
+		define ("PD_CONNECT_SERVER", $Path."/app/config/connect_server/");
 			define ("PF_CONNECT_SERVER", $Path."/app/config/connect_server/ic.connect_server.php");
 			define ("PF_INSTALLDB", $Path."/app/config/connect_server/ic.InstallDB.php");
 		define ("PF_CONFIG", $Path."/app/config/Config.tcb");
