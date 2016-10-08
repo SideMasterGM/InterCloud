@@ -1,4 +1,6 @@
 <?php
+	#Author: Jerson Martínez (Side Master)
+
 	class ConfigFile {
 
 		public function CreateFile($fn, $data){
