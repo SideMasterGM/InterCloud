@@ -1,5 +1,6 @@
 <?php
-	$fn = "../Config.tcb";
+	include ($_SERVER['DOCUMENT_ROOT']."/app/core/ic.const.php");
+	$fn = PF_CONFIG;
 
 	CreateFile($fn);
 	ConfirmFile($fn);
