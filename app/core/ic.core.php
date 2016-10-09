@@ -2,6 +2,8 @@
 <html lang="en">
 	<head>
 		<?php
+			#Author: Jerson Martínez (Side Master)
+		
 			#Inclusión de constantes que contienen las rutas de acceso.
 			include ($_SERVER['DOCUMENT_ROOT']."/app/core/ic.const.php"); 
 
