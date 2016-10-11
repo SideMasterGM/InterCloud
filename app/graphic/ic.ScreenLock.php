@@ -44,7 +44,7 @@
                   <div class="col-xs-9 p20 pv15 va-m bg-light">
 
                     <h3 class="mb5"><?php echo @$GameResult['usr']; ?>
-                      <small> - Logueado hace 
+                      <small> - Logueado 
                         <b> <?php echo nicetime(date("Y-m-d H:i", $GameResult['date_log_unix'])); ?> </b>
                     </h3>
 

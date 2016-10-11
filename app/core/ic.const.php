@@ -22,7 +22,7 @@
 		define ("PD_CONTROLLER_JS", 	$Path."/app/controller/js");
 		define ("PD_CONTROLLER_PHP", 	$Path."/app/controller/php");
 	
-	define ("PD_CORE", 		$path."/app/core");
+	define ("PD_CORE", 		$Path."/app/core");
 		define ("PD_CORE_SERVICES", $Path."/app/core/Services");
 		
 		define ("PF_CORE_HEAD", 		$Path."/app/core/ic.head.php");
