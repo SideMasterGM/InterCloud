@@ -61,6 +61,7 @@
 							#anuncie el problema con respecto al código de error.
 							if ($ArrayError[0] == "Unknown database ")
 								include (PD_GRAPHIC."/ic.message.unknowndb.php");
+								include (PD_GRAPHIC."/ic.message.errorfatal.php");
 						} else {
 							@exec("start notepad ".PF_CONFIG);
 							header("Location: ./");
