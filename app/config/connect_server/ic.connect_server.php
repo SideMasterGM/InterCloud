@@ -5,7 +5,12 @@
 		}
 	}
 
-	$t = $_SERVER['DOCUMENT_ROOT']."/app/config/Config.tcb";
+	$t = $_SERVER['DOCUMENT_ROOT']."/".explode("/", $_SERVER['REQUEST_URI'])[1]."/app/config/Config.tcb";
+
+	if (!file_exists($t)){
+		$t = $_SERVER['DOCUMENT_ROOT']."/app/config/Config.tcb";
+	} 
+
 	$error = false;
 
 	if (file_exists($t)){

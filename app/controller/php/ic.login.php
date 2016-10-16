@@ -11,8 +11,14 @@
 	if (!get_magic_quotes_gpc())
 		$un = addslashes($un);
 
-	$fn = "../../config/Config.tcb";
-	include ("../../config/connect_server/ic.connect_server.php");
+	#Importar constantes.
+	$Local = $_SERVER['DOCUMENT_ROOT']."/".explode("/", $_SERVER['REQUEST_URI'])[1]."/app/core/ic.const.php";
+
+	if (!file_exists($Local))
+		$Local = $_SERVER['DOCUMENT_ROOT']."/app/core/ic.const.php";
+	
+	include ($Local);
+	include (PF_CONNECT_SERVER);
 
 	$un = $TCB->real_escape_string($un);
 

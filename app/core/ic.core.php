@@ -5,7 +5,7 @@
 			#Author: Jerson Martínez (Side Master)
 		
 			#Inclusión de constantes que contienen las rutas de acceso.
-			include ($_SERVER['DOCUMENT_ROOT']."/app/core/ic.const.php"); 
+			include ($_SERVER['DOCUMENT_ROOT']."/".explode("/", $_SERVER['REQUEST_URI'])[1]."/app/core/ic.const.php"); 
 
 			#Se agrega el head del core, utilizando la constante PF_CORE_HEAD.
 			include (PF_CORE_HEAD); 
@@ -22,10 +22,11 @@
 
 			#Verificación de la existencia del fichero de configuración. 
 			if (file_exists(PF_CONFIG)){
-
 				#Verificar si existen errores, la variable error es originaria de 
 				# el fichero de conexión.
 				if ($error == true){
+					echo "Mal";
+					
 					$CodeError = @$TCB->connect_errno;
 					$MessageError = @$TCB->connect_error;
 					

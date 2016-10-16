@@ -3,7 +3,10 @@
 	#PD = Path Directory
 	#PF = Path File
 
-	$Path = @$_SERVER['DOCUMENT_ROOT'];
+	$Path = $_SERVER['DOCUMENT_ROOT']."/".explode("/", $_SERVER['REQUEST_URI'])[1];
+	if (explode("/", $_SERVER['REQUEST_URI'])[1] != "InterCloud"){
+		$Path = $_SERVER['DOCUMENT_ROOT'];	
+	}
 
 	define ("PD_INDEX", 	$Path."/");
 	define ("PD_APP", 		$Path."/app");
@@ -39,4 +42,5 @@
 
 	define ("PD_GRAPHIC", 	$Path."/app/graphic");
 	define ("PD_SRC", 		$Path."/app/src");
+
 ?>

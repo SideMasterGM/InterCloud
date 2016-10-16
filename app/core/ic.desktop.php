@@ -3,7 +3,7 @@
 	<head>
 		<?php 
 			#Importar constantes.
-			include ($_SERVER['DOCUMENT_ROOT']."/app/core/ic.const.php");
+			include ($_SERVER['DOCUMENT_ROOT']."/".explode("/", $_SERVER['REQUEST_URI'])[1]."/app/core/ic.const.php");
 
 			#Agregando fichero head del core.
 			include (PF_CORE_HEAD); 
