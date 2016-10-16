@@ -24,9 +24,7 @@
 			if (file_exists(PF_CONFIG)){
 				#Verificar si existen errores, la variable error es originaria de 
 				# el fichero de conexión.
-				if ($error == true){
-					echo "Mal";
-					
+				if ($error == true){					
 					$CodeError = @$TCB->connect_errno;
 					$MessageError = @$TCB->connect_error;
 					
