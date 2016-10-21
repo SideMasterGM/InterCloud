@@ -1,3 +1,5 @@
+<!-- Este es el fichero de cabecera!. -->
+
 <meta charset="utf-8">
 <title>InterCloud - Intranet</title>
 <meta name="keywords" content="TheCodeBrain / InterCloud - Servicio de Intranet Académica" />

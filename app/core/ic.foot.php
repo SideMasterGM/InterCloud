@@ -1,3 +1,5 @@
+<!-- Este es el fichero de pie de página, donde se insertan los scripts escritos en JS -->
+
 <!-- jQuery -->
   <script src="app/controller/src/plugins/vendor/jquery/jquery-1.11.1.min.js"></script>
   <script src="app/controller/src/plugins/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>

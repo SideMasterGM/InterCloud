@@ -1,5 +1,10 @@
 <?php
 	#Author: Jerson Martínez (Side Master)
+
+	#Este fichero contiene todas las CONSTANTES necesarias dentro del proyecto
+	#Su mayor funcionamiento será el contenido de rutas, las cuales puedes envocar 
+	#incluyendo este fichero en tu proyecto.
+	
 	#PD = Path Directory
 	#PF = Path File
 
