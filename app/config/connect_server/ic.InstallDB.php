@@ -73,12 +73,21 @@
 			stop VARCHAR(2) NOT NULL DEFAULT '-',
 			date_log DATE NOT NULL, 
 			date_log_unix VARCHAR(100) NOT NULL
+		)", #Aquí se especifica la dirección IP, sin embargo, no se sabe si es un IPv6 o IPv4. Por esa razón se le pasa 128 bytes de memmoria al atributo ip.
+		$X.'control_user' => "CREATE TABLE ".$X."control_user (
+			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+			ip VARCHAR(128) NOT NULL,
+			usr VARCHAR(50) NOT NULL, 
+			count INT, 
+			finished VARCHAR(2) DEFAULT 'x', 
+			date_log DATE NOT NULL, 
+			date_log_unix VARCHAR(100) NOT NULL
 		)"
 	);
 
 	$cont = 0; //$errors = 0; 
 	foreach ($tables as $key => $value){
-		if (!$TCB->query($tables[$key])){
+		if (!$IC->query($tables[$key])){
 			//echo "Ocurrió un problema en la tabla #:<b>".($cont + 1)."</b>, Tabla: <b>".$key."</b><br/>\n";
 			//$errors++;
 		}
@@ -104,9 +113,9 @@
 		('Farash','".$password."'),
 		('EAPP','".$password."');";
 
-	if ($TCB->query($Privilege))
-		if ($TCB->query($UserRootInfo))
-			if ($TCB->query($UserRoot))
+	if ($IC->query($Privilege))
+		if ($IC->query($UserRootInfo))
+			if ($IC->query($UserRoot))
 				//echo "\nSe han creado <b>".($cont - $errors)."</b> tablas de manera correcta!.\n";
 
 	$error = false;

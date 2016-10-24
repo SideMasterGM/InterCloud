@@ -41,10 +41,10 @@
 		}
 
 		#Se hace una instancia del objeto y se establece la conexión a la base de datos.
-		@$TCB = new InterCloud($H, $U, $P, $D);
+		@$IC = new InterCloud($H, $U, $P, $D);
 		
 		#Se verifica la conexión, en caso de error, se escribe true en la variable de error.
-		if (@$TCB->connect_error){
+		if (@$IC->connect_error){
 			$error = true;
 		} else {
 			$error = false; #false en caso contrario.
@@ -54,7 +54,7 @@
 				$X .= "_";
 
 			#Se aplica una query donde se escribe el método de entrada en caracteres.
-			if (!@$TCB->query("SET NAMES 'utf8'"))
+			if (!@$IC->query("SET NAMES 'utf8'"))
 				$error = true;
 			else
 				$error = false;

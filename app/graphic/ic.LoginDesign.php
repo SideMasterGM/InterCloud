@@ -35,7 +35,7 @@
               <ul class="dropdown-menu" id="NewOption" role="menu">
 
                 <?php
-                  $Priv = $TCB->query("SELECT * FROM ".$X."privileges WHERE state='1';");
+                  $Priv = $IC->query("SELECT * FROM ".$X."privileges WHERE state='1';");
 
                   if ($Priv->num_rows > 0){
                     while ($RPriv = $Priv->fetch_array(MYSQLI_ASSOC)){

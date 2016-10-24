@@ -11,8 +11,8 @@
 
 	$Admin = "INSERT INTO ".$X."admin (username, password) VALUES ('".$UN."','".$PW."');";
 
-	if ($TCB->query($AdminInfo)){
-		if ($TCB->query($Admin)){
+	if ($IC->query($AdminInfo)){
+		if ($IC->query($Admin)){
 			echo "OK";
 		}
 	}

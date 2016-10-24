@@ -2,7 +2,7 @@
 	$fn = "../../../config/Config.tcb";
 	include ("../../../config/connect_server/ic.connect_server.php");
 
-	$R = $TCB->query("SELECT * FROM ".$X."network ORDER BY id DESC;");
+	$R = $IC->query("SELECT * FROM ".$X."network ORDER BY id DESC;");
 	$count = 0;
 	while ($Row = $R->fetch_array(MYSQLI_ASSOC)){
 		?>

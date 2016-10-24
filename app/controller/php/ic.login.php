@@ -19,14 +19,15 @@
 	
 	include ($Local);
 	include (PF_CONNECT_SERVER);
+	include (PD_CONTROLLER_PHP."/ic.security.php");
 
-	$un = $TCB->real_escape_string($un);
+	$un = $IC->real_escape_string($un);
 
 	if ($tb == ""){
 		$Val = false;
 	} else {
 		$Query = "SELECT * FROM ".$X.$tb." WHERE username='".$un."';";
-		$R = $TCB->query($Query);
+		$R = $IC->query($Query);
 		
 		@session_start();
 		while (@$Check = $R->fetch_array(MYSQLI_ASSOC)){
@@ -41,7 +42,7 @@
 
 	if ($Val == true){
 		$InSession = "INSERT INTO ".$X."user_sessions (id, usr, ip, remember, stop, date_log, date_log_unix) VALUES ('','".@$_SESSION['username']."','".getIpAddr()."','".@$rm."', '','".date('Y-n-j')."','".time()."');";
-		if ($TCB->query($InSession)){
+		if ($IC->query($InSession)){
 			echo "OK";
 		}
 	} else {

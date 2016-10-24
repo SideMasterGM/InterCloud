@@ -2,7 +2,7 @@
 	$fn = "../../../config/Config.tcb";
 	include ("../../../config/connect_server/ic.connect_server.php");
 
-	$R = $TCB->query("SELECT * FROM ".$X."network ORDER BY id DESC LIMIT 1;")->fetch_array();
+	$R = $IC->query("SELECT * FROM ".$X."network ORDER BY id DESC LIMIT 1;")->fetch_array();
 
 	?>
 		<div class="form-group">

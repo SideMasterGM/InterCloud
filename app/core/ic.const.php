@@ -10,11 +10,13 @@
 
 	$Path = $_SERVER['DOCUMENT_ROOT']."/".explode("/", $_SERVER['REQUEST_URI'])[1];
 	if (explode("/", $_SERVER['REQUEST_URI'])[1] != "InterCloud"){
-		$Path = $_SERVER['DOCUMENT_ROOT'];	
+		$Path = $_SERVER['DOCUMENT_ROOT'];
 	}
 
 	define ("PD_INDEX", 	$Path."/");
 	define ("PD_APP", 		$Path."/app");
+
+	define ("PF_SOURCE", 	$Path."/source.tcb");
 
 	define ("PD_CONFIG", 	$Path."/app/config");
 		define ("PD_CONNECT_SERVER", 	$Path."/app/config/connect_server");

@@ -25,8 +25,8 @@
 				#Verificar si existen errores, la variable error es originaria de 
 				# el fichero de conexión.
 				if ($error == true){					
-					$CodeError = @$TCB->connect_errno;
-					$MessageError = @$TCB->connect_error;
+					$CodeError = @$IC->connect_errno;
+					$MessageError = @$IC->connect_error;
 					
 					#Código de error 1049: La base de datos desconocida.
 					if ($CodeError == 1049){
@@ -71,13 +71,13 @@
 					#configuración no existe.
 
 					#Consulta todos los datos de la tabla con el privilegio root.
-					$URoot = $TCB->query("SELECT * FROM ".$X."root;");
+					$URoot = $IC->query("SELECT * FROM ".$X."root;");
 
 					#En caso de hayan filas.
 					if (@$URoot->num_rows != 0){
 
 						#Consulta todos los datos de la tabla con el privilegio admin.
-						$RAdmin = $TCB->query("SELECT * FROM ".$X."admin;");
+						$RAdmin = $IC->query("SELECT * FROM ".$X."admin;");
 
 						#En caso de que hayan registros.
 						if (@$RAdmin->num_rows > 0){
@@ -89,7 +89,7 @@
 							#Consulta todos los datos de la tabla user_sessions donde la 
 							#la dirección IP es igual a la actual y con la sesión en memoria, ordenándolo por
 							#el atributo ID de forma descendente, limitando los datos a 1 registro.
-							$RGetSession = $TCB->query($GetSessions);
+							$RGetSession = $IC->query($GetSessions);
 							
 							#Verificar si existe el registro.
 							if (@$RGetSession->num_rows > 0){
@@ -100,10 +100,11 @@
 								
 								#Se verifica la columna stop de la fila obtenida si es igual a /.
 								#El simbolo (/) en esta columna significa que se ha cerrado la sesión recordada.
-								if ($GameResult['stop'] == "/")
+								if ($GameResult['stop'] == "/"){
 									include (PD_GRAPHIC."/ic.LoginDesign.php");
-								else
+								} else{
 									include (PD_GRAPHIC."/ic.ScreenLock.php");
+								}
 								#En caso de no tener (/) significa que aún sigue el usuario recordado en la máuqina.
 
 							} else {
