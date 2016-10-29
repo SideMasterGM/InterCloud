@@ -68,7 +68,7 @@
 		$X.'user_sessions' => "CREATE TABLE ".$X."user_sessions (
 			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 			usr VARCHAR(255) NOT NULL, 
-			ip VARCHAR(30) NOT NULL, 
+			ip VARCHAR(35) NOT NULL, 
 			remember INT NOT NULL DEFAULT '0',
 			stop VARCHAR(2) NOT NULL DEFAULT '-',
 			date_log DATE NOT NULL, 
@@ -76,10 +76,24 @@
 		)", #Aquí se especifica la dirección IP, sin embargo, no se sabe si es un IPv6 o IPv4. Por esa razón se le pasa 128 bytes de memmoria al atributo ip.
 		$X.'control_user' => "CREATE TABLE ".$X."control_user (
 			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-			ip VARCHAR(128) NOT NULL,
+			ip VARCHAR(128) NOT NULL, 
 			usr VARCHAR(50) NOT NULL, 
 			count INT, 
-			finished VARCHAR(2) DEFAULT 'x', 
+			finished VARCHAR(2), 
+			date_log DATE NOT NULL, 
+			date_log_unix VARCHAR(100) NOT NULL
+		)", 
+		$X.'control_attack' => "CREATE TABLE ".$X."control_attack (
+			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+			victim VARCHAR(255) NOT NULL, 
+			attacker VARCHAR(35) NOT NULL, 
+			date_log DATE NOT NULL, 
+			date_log_unix VARCHAR(100) NOT NULL
+		)", 
+		$X.'control_logout' => "CREATE TABLE ".$X."control_logout (
+			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+			usr VARCHAR(255) NOT NULL, 
+			ip VARCHAR(35) NOT NULL, 
 			date_log DATE NOT NULL, 
 			date_log_unix VARCHAR(100) NOT NULL
 		)"

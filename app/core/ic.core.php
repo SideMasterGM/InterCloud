@@ -60,7 +60,7 @@
 							#anuncie el problema con respecto al código de error.
 							if ($ArrayError[0] == "Unknown database ")
 								include (PD_GRAPHIC."/ic.message.unknowndb.php");
-								include (PD_GRAPHIC."/ic.message.errorfatal.php");
+								//include (PD_GRAPHIC."/ic.message.errorfatal.php");
 						} else {
 							@exec("start notepad ".PF_CONFIG);
 							header("Location: ./");
@@ -82,35 +82,56 @@
 						#En caso de que hayan registros.
 						if (@$RAdmin->num_rows > 0){
 
-							#Cadena que contiene una consulta de base de datos que será ejecutada 
-							#en la próxima intrucción.
-							$GetSessions = "SELECT * FROM ".$X."user_sessions WHERE ip='".$Config->getIpAddr()."' AND remember='1' ORDER BY id DESC LIMIT 1;";
-
-							#Consulta todos los datos de la tabla user_sessions donde la 
-							#la dirección IP es igual a la actual y con la sesión en memoria, ordenándolo por
-							#el atributo ID de forma descendente, limitando los datos a 1 registro.
-							$RGetSession = $IC->query($GetSessions);
+							$VerifyAttack = $IC->query("SELECT * FROM ".$X."control_attack WHERE attacker='".$Config->getIpAddr()."' ORDER BY id DESC LIMIT 1;");
 							
-							#Verificar si existe el registro.
-							if (@$RGetSession->num_rows > 0){
-
-								#Extraer columnas de las filas por medio de los atributos, 
-								#con un array asociativo.
-								@$GameResult = $RGetSession->fetch_array(MYSQLI_ASSOC);
+							if ($VerifyAttack->num_rows == 1){
+								$VA = $VerifyAttack->fetch_array(MYSQLI_ASSOC);
 								
-								#Se verifica la columna stop de la fila obtenida si es igual a /.
-								#El simbolo (/) en esta columna significa que se ha cerrado la sesión recordada.
-								if ($GameResult['stop'] == "/"){
-									include (PD_GRAPHIC."/ic.LoginDesign.php");
-								} else{
-									include (PD_GRAPHIC."/ic.ScreenLock.php");
-								}
-								#En caso de no tener (/) significa que aún sigue el usuario recordado en la máuqina.
+								$GetDateLogUNIX = $VA['date_log_unix'];
+								$Actual = time() - 300;
+								$tiempo = $GetDateLogUNIX-$Actual;
 
+								if ($GetDateLogUNIX >= $Actual){
+									$TimeRest = date("i:s", $tiempo);
+									include (PD_GRAPHIC."/ic.SecurityAttack.php");
+								} else {
+									goto Funcionamiento;
+								}
 							} else {
-								#No hay sesión recordada. Por lo tanto, se muestra la vista del formulario de login.
-								include (PD_GRAPHIC."/ic.LoginDesign.php");
+								Funcionamiento:
+									#Cadena que contiene una consulta de base de datos que será ejecutada 
+										#en la próxima intrucción.
+
+										$GetSessions = "SELECT * FROM ".$X."user_sessions WHERE ip='".$Config->getIpAddr()."' AND remember='1' ORDER BY id DESC LIMIT 1;";
+
+										#Consulta todos los datos de la tabla user_sessions donde la 
+										#la dirección IP es igual a la actual y con la sesión en memoria, ordenándolo por
+										#el atributo ID de forma descendente, limitando los datos a 1 registro.
+										$RGetSession = $IC->query($GetSessions);
+										
+										#Verificar si existe el registro.
+										if (@$RGetSession->num_rows > 0){
+
+											#Extraer columnas de las filas por medio de los atributos, 
+											#con un array asociativo.
+											@$GameResult = $RGetSession->fetch_array(MYSQLI_ASSOC);
+											
+											#Se verifica la columna stop de la fila obtenida si es igual a /.
+											#El simbolo (/) en esta columna significa que se ha cerrado la sesión recordada.
+											
+											if ($GameResult['stop'] == "/"){
+												include (PD_GRAPHIC."/ic.LoginDesign.php");
+											} else{
+												include (PD_GRAPHIC."/ic.ScreenLock.php");
+											}
+											#En caso de no tener (/) significa que aún sigue el usuario recordado en la máuqina.
+
+										} else {
+											#No hay sesión recordada. Por lo tanto, se muestra la vista del formulario de login.
+											include (PD_GRAPHIC."/ic.LoginDesign.php");
+										}
 							}
+
 						} else {
 							#En caso de que no haya registro de administrador, se muestra un formulario
 							#donde puede registrar el primero. Esto será solo una vez.

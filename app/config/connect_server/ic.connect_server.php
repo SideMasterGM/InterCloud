@@ -1,5 +1,5 @@
 <?php
-	#Esta es la clase conexión al servidor de DB que extiene a MySQLi.
+	#Esta es la clase conexión al servidor de DB que extiende a MySQLi.
 	class InterCloud extends mysqli {
 		public function __construct($host, $user, $pass, $db){
 			@parent::__construct($host, $user, $pass, $db);

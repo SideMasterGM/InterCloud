@@ -1,5 +1,7 @@
 <?php
 	$Val = false;
+	$ExistUser = false;
+
 	$un = trim($_POST['username']);
 	$pw = trim($_POST['password']);
 	$tb = trim($_POST['privilege']);
@@ -19,7 +21,6 @@
 	
 	include ($Local);
 	include (PF_CONNECT_SERVER);
-	include (PD_CONTROLLER_PHP."/ic.security.php");
 
 	$un = $IC->real_escape_string($un);
 
@@ -35,15 +36,27 @@
 				@$_SESSION['login'] = true;
 				@$_SESSION['p'] = $tb;
 				@$_SESSION['username'] = $un;
+				@$_SESSION['prefix'] = $X.$tb;
 				$Val = true;
 			}
+			$ExistUser = true;
 		}
 	}
 
-	if ($Val == true){
-		$InSession = "INSERT INTO ".$X."user_sessions (id, usr, ip, remember, stop, date_log, date_log_unix) VALUES ('','".@$_SESSION['username']."','".getIpAddr()."','".@$rm."', '','".date('Y-n-j')."','".time()."');";
-		if ($IC->query($InSession)){
-			echo "OK";
+	if ($ExistUser){
+		include (PD_CONTROLLER_PHP."/ic.security.php");
+		
+		if (!$Val){
+			if ($AttackDetect != "AD"){
+				echo "Error";
+			} else {
+				echo $AttackDetect;
+			}
+		} else {
+			$InSession = "INSERT INTO ".$X."user_sessions (id, usr, ip, remember, stop, date_log, date_log_unix) VALUES ('','".@$_SESSION['username']."','".getIpAddr()."','".@$rm."', '','".date('Y-n-j')."','".time()."');";
+			if ($IC->query($InSession)){
+				echo "OK";
+			}
 		}
 	} else {
 		echo "Error";

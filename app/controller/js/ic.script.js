@@ -73,6 +73,13 @@ function start(){
 				} else if (data == "Error"){
 					$(".VerifyInformation").html("El usuario escrito no se encuentra, por favor, verifíquelos y vuelva a intentarlo.");
 					$("#BtnModalLogin").click();
+				} else if (data == "AD"){
+					$(".VerifyInformation").html("Se ha intentado hacer un ataque con esta cuenta. Verificaré el problema lo más rápido posible!.");
+					$("#BtnModalLogin").click();
+
+					setTimeout(function(){
+						window.location.href="./";
+					}, 3000);
 				}
 			}
 		});
