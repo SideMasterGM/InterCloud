@@ -36,7 +36,7 @@
 				@$_SESSION['login'] = true;
 				@$_SESSION['p'] = $tb;
 				@$_SESSION['username'] = $un;
-				@$_SESSION['prefix'] = $X.$tb;
+				@$_SESSION['prefix'] = $X;
 				$Val = true;
 			}
 			$ExistUser = true;

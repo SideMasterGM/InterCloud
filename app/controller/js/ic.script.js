@@ -1,5 +1,7 @@
 $(document).ready(start);
 
+// window.onload=ExecTimerSession;
+
 function start(){
 
 	$(".ConfigNetwork").hide();
@@ -46,6 +48,17 @@ function start(){
 	  	LoginLockSession();
 	  	event.preventDefault(); 
 	});
+
+	/*Only Sheat, no he podido hacer esta mierda...*/
+	/*De momento nos quedamos por aquí en el código*/
+	if ($("#TimeRestActive").val() == "Yes"){
+		
+		ExecTimerSession();
+
+		setTimeout(function(){
+			window.location.href = "./";
+		}, ($("#TimeRestHope").val() * 1000)+1000 );
+	}
 	
 	$("#BtnLogin").click(function(){
 		var UN = $("#username").val(), 
@@ -160,6 +173,34 @@ function start(){
 	});
 }
 
+// function wait(nsegundos) {
+// 	objetivo = (new Date()).getTime() + 1000 * Math.abs(nsegundos);
+// 	while ( (new Date()).getTime() < objetivo );
+// };
+	var totalTiempo = Math.floor($("#TimeRestHope").val());
+
+function ExecTimerSession(){
+	ValorNum = $("#TimeRestHope").val() / 60;
+	$("#ValoresSave").val(ValorNum);
+
+	DecimalValue = ValorNum.toFixed(2);
+	DecimalSolo = parseFloat(DecimalValue).toFixed();
+
+	MoreOtherT = Math.floor(((DecimalValue - (Math.floor(DecimalValue) ) ) * 60).toFixed());
+
+	if (MoreOtherT >= 0 && MoreOtherT < 10){
+		TimeRegresive = "0" + Math.floor(DecimalValue) + ":0" + MoreOtherT;
+	} else {
+		TimeRegresive = "0" + Math.floor(DecimalValue) + ":" + MoreOtherT;
+	}
+
+	$(".badge").html(TimeRegresive);
+
+    $("#TimeRestHope").val(Math.floor($("#TimeRestHope").val()) - 1);
+    setTimeout("ExecTimerSession()", 1000);
+    
+}
+
 function LoginLockSession(){
 	$("#TmpPassword").val($("#mypassword").val());
 
@@ -175,8 +216,15 @@ function LoginLockSession(){
 				if (data == "OK"){
 					window.location.href="./";
 				} else if (data == "Error"){
-					$(".VerifyInformation").html("La contraseña del usuario <b>" + $("#TmpUsername").val() + "</b>, no es correcta, por favor, verifíquela y vuelva a escribirla.");
+					$(".VerifyInformation").html("El usuario escrito no se encuentra, por favor, verifíquelos y vuelva a intentarlo.");
 					$("#BtnModalLogin").click();
+				} else if (data == "AD"){
+					$(".VerifyInformation").html("Se ha intentado hacer un ataque con esta cuenta. Verificaré el problema lo más rápido posible!.");
+					$("#BtnModalLogin").click();
+
+					setTimeout(function(){
+						window.location.href="./";
+					}, 3000);
 				}
 			}
 		});

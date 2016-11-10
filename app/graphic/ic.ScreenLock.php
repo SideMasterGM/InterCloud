@@ -1,4 +1,4 @@
-<?php include ("app/controller/php/ic.CalcDate.php"); ?>
+<?php include (PD_CONTROLLER_PHP."/ic.CalcDate.php"); ?>
 
 <!-- Start: Main -->
   <div id="main" class="animated fadeIn">
@@ -118,5 +118,4 @@
 </div>
 </div>
 
-
-<?php include ("app/core/ic.foot.php"); ?>
+<?php include (PD_CORE."/ic.foot.php"); ?>

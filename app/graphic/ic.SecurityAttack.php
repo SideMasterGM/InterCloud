@@ -24,14 +24,18 @@
       <div class="admin-form theme-info" id="login1">
         <div class="panel">
           <div class="panel-heading">
-            <span class="panel-title">Intentos de sesión</span>
+            <span class="panel-title">Fallo de sesión</span>
             <div class="widget-menu pull-right mr10">
               <span class="label bg-primary mr10">Tiempo</span>
               <span class="badge"><?php echo $TimeRest; ?></span>
             </div>
           </div>
           <div class="panel-body">
-            <p>Usted ha agotado la cantidad de intentos posibles para dicho usuario, espere <b>5 minutos</b> y vuelva a intentarlo.</p>
+            <p>Usted ha agotado la cantidad de intentos posibles para dicho usuario, espere <b>5 minutos</b> y vuelva a intentarlo. </p>
+            <!-- No perdamos de vista estos valores... -->
+            <input type="hidden" id="ValoresSave" value="" />
+            <input type="hidden" id="TimeRestActive" value="Yes" />
+            <input type="hidden" id="TimeRestHope" value="<?php echo ($tiempo); ?>" />
           </div>
         </div>
         </div>
