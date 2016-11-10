@@ -45,7 +45,14 @@
 
                     <h3 class="mb5"><?php echo @$GameResult['usr']; ?>
                       <small> - Logueado 
-                        <b> <?php echo nicetime(date("Y-m-d H:i", $GameResult['date_log_unix'])); ?> </b>
+                        <b> 
+                          <?php 
+                            $GetLogout = "SELECT * FROM ".$X."control_logout WHERE usr='".@$GameResult['usr']."' AND ip='".$Config->getIpAddr()."' AND remember='1' ORDER BY id DESC LIMIT 1;";
+
+                            $RLogout = $IC->query($GetLogout)->fetch_array(MYSQLI_ASSOC);
+                            echo nicetime(date("Y-m-d H:i", $RLogout['date_log_unix'])); 
+                          ?> 
+                        </b>
                     </h3>
 
                     <?php

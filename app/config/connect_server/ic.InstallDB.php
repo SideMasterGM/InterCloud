@@ -94,6 +94,7 @@
 			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 			usr VARCHAR(255) NOT NULL, 
 			ip VARCHAR(35) NOT NULL, 
+			remember INT NOT NULL DEFAULT '0',
 			date_log DATE NOT NULL, 
 			date_log_unix VARCHAR(100) NOT NULL
 		)"

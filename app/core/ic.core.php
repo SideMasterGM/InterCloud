@@ -121,10 +121,10 @@
 											
 											if ($GameResult['stop'] == "/"){
 												include (PD_GRAPHIC."/ic.LoginDesign.php");
-											} else{
+											} else {
 												include (PD_GRAPHIC."/ic.ScreenLock.php");
 											}
-											#En caso de no tener (/) significa que aún sigue el usuario recordado en la máuqina.
+											#En caso de no tener (/) significa que aún sigue el usuario recordado en la máquina.
 
 										} else {
 											#No hay sesión recordada. Por lo tanto, se muestra la vista del formulario de login.
