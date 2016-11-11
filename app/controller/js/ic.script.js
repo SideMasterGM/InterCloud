@@ -177,7 +177,7 @@ function start(){
 // 	objetivo = (new Date()).getTime() + 1000 * Math.abs(nsegundos);
 // 	while ( (new Date()).getTime() < objetivo );
 // };
-	var totalTiempo = Math.floor($("#TimeRestHope").val());
+var totalTiempo = Math.floor($("#TimeRestHope").val());
 
 function ExecTimerSession(){
 	ValorNum = $("#TimeRestHope").val() / 60;
@@ -216,15 +216,15 @@ function LoginLockSession(){
 				if (data == "OK"){
 					window.location.href="./";
 				} else if (data == "Error"){
-					$(".VerifyInformation").html("El usuario escrito no se encuentra, por favor, verifíquelos y vuelva a intentarlo.");
+					$(".VerifyInformation").html("¡Up's, algo ha salido mal!. Verifique sus credenciales y vuelva a intentarlo.");
 					$("#BtnModalLogin").click();
 				} else if (data == "AD"){
-					$(".VerifyInformation").html("Se ha intentado hacer un ataque con esta cuenta. Verificaré el problema lo más rápido posible!.");
+					$(".VerifyInformation").html("Disculpe, la cantidad de veces que ha escrito la contraseña incorrecta, se ha excedido. Verifique sus datos y vuelva a intentarlo más tarde.");
 					$("#BtnModalLogin").click();
 
 					setTimeout(function(){
 						window.location.href="./";
-					}, 3000);
+					}, 10000);
 				}
 			}
 		});

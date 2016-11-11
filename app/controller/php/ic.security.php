@@ -25,7 +25,6 @@
 			$GetFinalNum = $IC->query($Q);
 
 			if ($GetFinalNum){
-				
 				$GFN = $GetFinalNum->fetch_array(MYSQLI_ASSOC);
 
 				if ($GFN['finished'] == "/"){
@@ -33,10 +32,7 @@
 
 					$Q = "INSERT INTO ".$X."control_user (id, usr, ip, count, finished, date_log, date_log_unix) VALUES ('','".$un."','".getIpAddr()."','".($IntCount + 1)."','','".date('Y-n-j')."','".time()."');";
 
-					if ($IC->query($Q)){
-						#Added now
-					}
-
+					$IC->query($Q);
 					exit();
 				} else {
 
@@ -56,9 +52,7 @@
 						$IntCount = $GFN['count'];
 						$Q = "INSERT INTO ".$X."control_user (id, usr, ip, count, finished, date_log, date_log_unix) VALUES ('','".$un."','".getIpAddr()."','".($IntCount + 1)."','','".date('Y-n-j')."','".time()."');";
 
-						if ($IC->query($Q)){
-							#Added now
-						}
+						$IC->query($Q);
 					}
 				}
 			}
@@ -77,20 +71,14 @@
 				if ($IntCountTwo == $IntCount){
 					$Q = "INSERT INTO ".$X."control_user (id, usr, ip, count, finished, date_log, date_log_unix) VALUES ('','".$un."','".getIpAddr()."','".($IntCount + 1)."','','".date('Y-n-j')."','".time()."');";
 
-					if ($IC->query($Q)){
-						#Added now
-					}
-				} else {
-					#No hacer nada...
+					$IC->query($Q);
 				}
 			}
 		} else {
 
 			$Q = "INSERT INTO ".$X."control_user (id, usr, ip, count, finished, date_log, date_log_unix) VALUES ('','".$un."','".getIpAddr()."','".($IntCount + 1)."','','".date('Y-n-j')."','".time()."');";
-
-			if ($IC->query($Q)){
-				#Added Now
-			}
+			
+			$IC->query($Q);
 		}
 	}
 ?>

@@ -67,7 +67,7 @@
 						}
 					}
 				} else {
-					#En caso de haber llegado hasta acá siginifica que el fichero de
+					#En caso de haber llegado hasta acá significa que el fichero de
 					#configuración no existe.
 
 					#Consulta todos los datos de la tabla con el privilegio root.
@@ -89,11 +89,28 @@
 								
 								$GetDateLogUNIX = $VA['date_log_unix'];
 								$Actual = time() - 300;
-								$tiempo = $GetDateLogUNIX-$Actual;
+								$tiempo = $GetDateLogUNIX - $Actual;
 
 								if ($GetDateLogUNIX >= $Actual){
 									$TimeRest = date("i:s", $tiempo);
-									include (PD_GRAPHIC."/ic.SecurityAttack.php");
+
+									$GetOneSession = "SELECT * FROM ".$X."user_sessions WHERE ip='".$Config->getIpAddr()."' ORDER BY id DESC LIMIT 1;";
+									$ThisWell = $IC->query($GetOneSession);
+
+									if (@$ThisWell->num_rows > 0){
+										@$Gresult = $ThisWell->fetch_array(MYSQLI_ASSOC);
+
+										$SelectLogout = "SELECT * FROM ".$X."control_logout WHERE usr='".@$Gresult['usr']."' AND ip='".$Config->getIpAddr()."' ORDER BY id DESC LIMIT 1;";
+
+	                           			$SLogout = $IC->query($SelectLogout)->fetch_array(MYSQLI_ASSOC);
+
+										if ($SLogout['date_log_unix'] > (time() - 600)){
+											goto Funcionamiento;
+										} else {
+											include (PD_GRAPHIC."/ic.SecurityAttack.php");
+										}	
+									}
+
 								} else {
 									goto Funcionamiento;
 								}
@@ -118,12 +135,13 @@
 											
 											#Se verifica la columna stop de la fila obtenida si es igual a /.
 											#El simbolo (/) en esta columna significa que se ha cerrado la sesión recordada.
-											
+
 											if ($GameResult['stop'] == "/"){
 												include (PD_GRAPHIC."/ic.LoginDesign.php");
 											} else {
 												include (PD_GRAPHIC."/ic.ScreenLock.php");
 											}
+
 											#En caso de no tener (/) significa que aún sigue el usuario recordado en la máquina.
 
 										} else {
