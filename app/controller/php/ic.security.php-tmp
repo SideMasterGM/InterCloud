@@ -7,7 +7,7 @@
 
 $AttackDetect = "";
 $IntCount     = 0;
-$RunNum       = 2;
+$RunNum       = 5;
 
 $Q          = "SELECT * FROM ".$X."control_user ORDER BY id DESC LIMIT ".$RunNum;
 $GetLastNum = $IC->query($Q);

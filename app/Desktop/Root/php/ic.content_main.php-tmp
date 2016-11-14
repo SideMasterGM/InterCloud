@@ -77,9 +77,9 @@
                 </div>
 
                 <div role="tabpanel" class="tab-pane" id="profile">
-                  
+
                   <form class="form-horizontal" id="FormAppendDataDetails">
-                    
+
                   </form>
                 </div>
 

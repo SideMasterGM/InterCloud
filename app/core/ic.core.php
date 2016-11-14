@@ -29,8 +29,9 @@
 					$MessageError = @$IC->connect_error;
 					
 					#Código de error 1049: La base de datos desconocida.
+					$ArrayError = explode("'", $MessageError);
+					
 					if ($CodeError == 1049){
-						$ArrayError = explode("'", $MessageError);
 
 						#Verificación de la existencia del directorio install/
 						if (file_exists(PD_INSTALL)){

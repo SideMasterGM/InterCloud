@@ -1,7 +1,5 @@
 $(document).ready(start);
 
-// window.onload=ExecTimerSession;
-
 function start(){
 
 	$(".ConfigNetwork").hide();
@@ -49,8 +47,6 @@ function start(){
 	  	event.preventDefault(); 
 	});
 
-	/*Only Sheat, no he podido hacer esta mierda...*/
-	/*De momento nos quedamos por aquí en el código*/
 	if ($("#TimeRestActive").val() == "Yes"){
 		
 		ExecTimerSession();
@@ -173,10 +169,6 @@ function start(){
 	});
 }
 
-// function wait(nsegundos) {
-// 	objetivo = (new Date()).getTime() + 1000 * Math.abs(nsegundos);
-// 	while ( (new Date()).getTime() < objetivo );
-// };
 var totalTiempo = Math.floor($("#TimeRestHope").val());
 
 function ExecTimerSession(){
