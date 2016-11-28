@@ -5,18 +5,9 @@
 
 <!-- Start code here... -->
 
-
-<div class="checkbox-custom checkbox-primary"></div>
-<div class="checkbox-custom checkbox-success"></div>
-<div class="checkbox-custom checkbox-info"></div>
-<div class="checkbox-custom checkbox-warning"></div>
-<div class="checkbox-custom checkbox-danger"></div>
-<div class="checkbox-custom checkbox-alert"></div>
-<div class="checkbox-custom checkbox-system"></div>
-<div class="checkbox-custom checkbox-dark"></div>
-
-
-
+<?php
+  include ("ic.test.php");
+?>
 
 <!-- Finish code... -->
 
@@ -24,7 +15,7 @@
 <!-- Button trigger modal
 <button type="hidden" class="ConfigNetwork" data-toggle="modal" data-target="#NowConfigNetwork"></button>
 
-<!-- Modal -->
+<!- Modal -->
 <div class="modal fade" id="NowConfigNetwork" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
