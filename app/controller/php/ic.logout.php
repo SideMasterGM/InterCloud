@@ -16,7 +16,7 @@
 	
 	$Query = "INSERT INTO ".@$_SESSION['prefix']."control_logout (id, usr, ip, remember, date_log, date_log_unix) VALUES ('','".@$_SESSION['username']."','".$Object->getIpAddr()."','".@$_SESSION['rmb']."','".date('Y-n-j')."','".time()."');";
 
-	if ($IC->query($Query)){
+	if (@$IC->query($Query)){
 		@session_destroy();
 		header("Location: ../../../");
 	} else {
