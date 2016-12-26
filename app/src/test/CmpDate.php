@@ -22,7 +22,7 @@
   	}
 
 	$Firts 	= "31/12/2016"; //Finish date
-	$Second = "29/12/2017"; //Start date
+	$Second = "29/12/2016"; //Start date
 
 	$Days = CmpDate($Firts, $Second);
 
