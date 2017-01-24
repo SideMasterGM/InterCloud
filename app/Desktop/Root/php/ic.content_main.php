@@ -3,7 +3,7 @@
 
 <!-- Start code here... -->
 <?php
-  include ("ic.test.php");
+  //include ("ic.test.php");
 ?>
 
 <!-- Finish code... -->
