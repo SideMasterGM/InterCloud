@@ -120,11 +120,7 @@
 		$X.'countries' => "CREATE TABLE ".$X."countries (
 			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 			title VARCHAR(255) NOT NULL,
-<<<<<<< HEAD
 			date_log DATE NOT NULL, 
-=======
-			date_log DATE NOT NULL,
->>>>>>> refs/remotes/origin/master
 			date_log_unix VARCHAR(100) NOT NULL
 		)"
 	);
