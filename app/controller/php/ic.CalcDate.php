@@ -35,7 +35,10 @@
         $difference = round($difference);
         
         if($difference != 1) {
-            $periods[$j].= "s";
+            if ($periods[$j] == "mes")
+                $periods[$j].= "es";
+            else
+                $periods[$j].= "s";
         }
         
         return "{$tense} $difference $periods[$j]";
