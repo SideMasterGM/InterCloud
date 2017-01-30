@@ -9,7 +9,7 @@
 	    include ("app/src/test/size_directory.php");
 	  ?>
 
-    <span class="footer-meta">Tamaño del sistema: <b><?php echo dirSize("./app"); ?></b>. Espacio disponible en disco <b>
+    <span class="footer-meta">Tamaño del sistema: <b><?php echo dirSize("./app"); ?></b> | Disponible: <b>
     	<?php echo know_free_space(); ?></b> Libre</span>
     <a href="#content" class="footer-return-top">
       <span class="fa fa-arrow-up"></span>

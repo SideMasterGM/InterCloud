@@ -1,21 +1,17 @@
 <input type="hidden" id="title_sm" value="" />
 <input type="hidden" id="content_sm" value="" />
 
-
-
 <!-- Start code here... -->
 
 <?php
-  include ("ic.test.php");
+  //include ("ic.test.php");
 ?>
 
 <!-- Finish code... -->
 
-
-<!-- Button trigger modal
 <button type="hidden" class="ConfigNetwork" data-toggle="modal" data-target="#NowConfigNetwork"></button>
 
-<!- Modal -->
+<!-- <!- Modal -->
 <div class="modal fade" id="NowConfigNetwork" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
