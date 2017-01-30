@@ -24,7 +24,7 @@
             <div role="tab-block">
               <!-- Tabs Navigation -->
               <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Configurar</a></li>
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Nuevo perfil</a></li>
                 <li role="presentation"><a href="#profile" aria-controls="profile" id="DetailsNetwork" role="tab" data-toggle="tab">Detalles</a></li>
                 <li role="presentation"><a href="#historial" aria-controls="historial" id="HistoryNetwork" role="tab" data-toggle="tab">Historial</a></li>
               </ul>
@@ -43,7 +43,7 @@
                      <div class="form-group">
                       <label class="col-sm-4 control-label">Modo</label>
                       <div class="col-sm-8">
-                        <p class="form-control-static">Allow</p>
+                        <p class="form-control-static">Permitido / Allow</p>
                       </div>
                     </div>
 

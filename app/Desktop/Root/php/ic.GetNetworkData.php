@@ -16,7 +16,6 @@
 	      <label class="col-sm-4 control-label">Modo:</label>
 	      <div class="col-sm-30">
 	        <p class="form-control-static DataAllow">
-	        	Allow / 
 	        	<?php 
 	        		if ($R['allow'] == 0){
 	        			echo "No habilitada";
