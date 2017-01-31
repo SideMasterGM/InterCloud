@@ -21,9 +21,9 @@
                 <div class="panel-body">
                   <?php 
                   	if ($Row['allow'] == 0){
-	        			echo "<b>Estado: </b> / No habilitada";
+	        			echo "<b>Estado: </b>No habilitada";
 	        		} else {
-	        			echo "<b>Estado: </b> / Habilitada";
+	        			echo "<b>Estado: </b>Habilitada";
 	        		}
                   ?>
                 <div class="switch switch-info round switch-inline" style="position: absolute; right: 10px; margin-top: -3px;">
