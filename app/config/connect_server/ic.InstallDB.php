@@ -97,7 +97,25 @@
 			remember INT NOT NULL DEFAULT '0',
 			date_log DATE NOT NULL, 
 			date_log_unix VARCHAR(100) NOT NULL
-		)"
+		)",
+		$X.'matricula' => "CREATE TABLE ".$X."matricula (
+			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+			name VARCHAR(255) NOT NULL,
+			address VARCHAR(255) NOT NULL,
+			IDcard VARCHAR(255) NOT NULL,
+			birth VARCHAR(255) NOT NULL,
+			nacionality VARCHAR(255) NOT NULL, 
+			gender INT NOT NULL,
+			phone VARCHAR(255) NOT NULL,
+			phone1 VARCHAR(255) NOT NULL,
+			date_log_unix VARCHAR(100) NOT NULL
+		)",
+		$X.'countries' => "CREATE TABLE ".$X."countries (
+			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+			title VARCHAR(255) NOT NULL,
+			date_log_unix VARCHAR(100) NOT NULL
+		)",
+
 	);
 
 	$cont = 0; //$errors = 0; 

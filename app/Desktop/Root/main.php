@@ -14,6 +14,7 @@
     <section id="content_wrapper">
       <?php include ("php/ic.Topbar-Dropdown.php"); ?>      
       <?php include ("php/ic.content_main.php"); ?>
+      <?php include ("php/ic.test.php"); ?>
 
       <footer id="content-footer" class="affix">
         <?php include ("php/ic.footer.php"); ?>
