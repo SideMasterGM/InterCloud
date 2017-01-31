@@ -8,15 +8,16 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="inputDireccion" class="col-sm-2 control-label">Direccion</label>
+      <label for="inputDireccion" class="col-sm-2 control-label">Dirección</label>
       <div class="col-xs-6">
-        <input type="text" name="direccion" class="form-control" id="inputDireccion" placeholder="Chinandega, Frente Al Colegio M.B">
+        <input type="text" class="form-control" id="inputDireccion" placeholder="com">
       </div>
     </div>
     <div class="form-group">
       <label for="inputEmail" class="col-sm-2 control-label">Email</label>
       <div class="col-xs-6">
         <input type="email" name="email" class="form-control" id="inputEmail" placeholder="help@gmail.com">
+
       </div>
     </div>
     <div class="form-group">

@@ -4,7 +4,7 @@
 <!-- Start code here... -->
 
 <?php
-  //include ("ic.test.php");
+  include ("ic.MatriculaP1.php");
 ?>
 
 <!-- Finish code... -->
@@ -43,7 +43,7 @@
                      <div class="form-group">
                       <label class="col-sm-4 control-label">Modo</label>
                       <div class="col-sm-8">
-                        <p class="form-control-static">Permitido / Allow</p>
+                        <p class="form-control-static">Permitido | Allow</p>
                       </div>
                     </div>
 

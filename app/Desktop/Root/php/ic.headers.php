@@ -28,7 +28,7 @@
             </li>
             <li>
               <a href="#" style="width: 250px; padding: 10px;">
-                Apagar / Iniciar Red
+                Apagar | Iniciar Red
                 <div class="switch switch-info round switch-inline" style="position: absolute; right: 10px; margin-top: -3px;">
                     <input id="IniciarApagarRH" type="checkbox">
                     <label for="IniciarApagarRH" id="dropdown-Network"></label>
@@ -39,7 +39,7 @@
             <li class="divider"></li>
             <li>
               <a href="#" style="width: 250px; padding: 10px;">
-                Apagar / Iniciar MySQL
+                Apagar | Iniciar MySQL
                   <div class="switch switch-info round switch-inline" style="position: absolute; right: 10px; margin-top: -3px;">
                     <input id="IAMySQL" type="checkbox" checked="">
                     <label for="IAMySQL" id="dropdown-MySQL" class="notification" data-note-stack="stack_bottom_right" data-note-style="success"></label>
@@ -50,7 +50,7 @@
             <li class="divider"></li>
             <li>
               <a href="#" style="width: 250px; padding: 10px;">
-                Apagar / Iniciar Apache
+                Apagar | Iniciar Apache
                 <div class="switch switch-info round switch-inline" style="position: absolute; right: 10px; margin-top: -3px;">
                     <input id="IAApache" type="checkbox" checked="">
                     <label for="IAApache" id="dropdown-Apache" class="notification" data-note-stack="stack_bottom_right" data-note-style="success"></label>

@@ -13,10 +13,10 @@
 	    </div>
 
 	    <div class="form-group">
-	      <label class="col-sm-4 control-label">Modo:</label>
+	      <label class="col-sm-4 control-label">Estado:</label>
 	      <div class="col-sm-30">
 	        <p class="form-control-static DataAllow">
-	        	<?php 
+	        	<?php
 	        		if ($R['allow'] == 0){
 	        			echo "No habilitada";
 	        		} else {
@@ -28,7 +28,7 @@
 	    </div>
 
 	    <div class="form-group">
-	      <label class="col-sm-4 control-label">Nombre de la red:</label>
+	      <label class="col-sm-4 control-label">Nombre del perfil:</label>
 	      <div class="col-sm-30">
 	        <p class="form-control-static NameNet"><?php echo $R['name']; ?></p>
 	      </div>
