@@ -1,23 +1,5 @@
-<div class="wrap">
-  <h1 id="h1" style="text-align: center">Matricula</h1>
-  <form class="form-horizontal" method="post" action="rb.mat.php">
-    <div class="form-group">
-      <label for="inputNombre" class="col-sm-2 control-label">Nombre Completo</label>
-      <div class="col-xs-6">
-        <input type="text" name="nombre" class="form-control" id="inputNombre" placeholder="Nombre Completo">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputDireccion" class="col-sm-2 control-label">Dirección</label>
-      <div class="col-xs-6">
-        <input type="text" class="form-control" id="inputDireccion" placeholder="com">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-      <div class="col-xs-6">
-        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="help@gmail.com">
 
+<<<<<<< HEAD
       </div>
     </div>
     <div class="form-group">
@@ -68,3 +50,11 @@
     </div>
   </form>
 </div>
+=======
+<?php 
+  include ("app/Desktop/Root/graphic/ic.enrollment1.php");
+  include ("app/Desktop/Root/graphic/ic.enrollment2.php");
+  include ("app/Desktop/Root/graphic/ic.staffregistration1.php");
+  include ("app/Desktop/Root/graphic/ic.staffregistration2.php");
+?>
+>>>>>>> refs/remotes/origin/master

@@ -110,16 +110,21 @@
 			address VARCHAR(255) NOT NULL,
 			IDcard VARCHAR(255) NOT NULL,
 			birth VARCHAR(255) NOT NULL,
-			nacionality VARCHAR(255) NOT NULL, 
+			nationality VARCHAR(255) NOT NULL, 
 			gender INT NOT NULL,
 			phone VARCHAR(255) NOT NULL,
 			phone1 VARCHAR(255) NOT NULL,
+			date_log DATE NOT NULL,
 			date_log_unix VARCHAR(100) NOT NULL
 		)",
 		$X.'countries' => "CREATE TABLE ".$X."countries (
 			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 			title VARCHAR(255) NOT NULL,
+<<<<<<< HEAD
 			date_log DATE NOT NULL, 
+=======
+			date_log DATE NOT NULL,
+>>>>>>> refs/remotes/origin/master
 			date_log_unix VARCHAR(100) NOT NULL
 		)"
 	);

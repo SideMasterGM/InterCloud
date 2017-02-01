@@ -3,10 +3,13 @@
 
 <!-- Start code here... -->
 
+<<<<<<< HEAD
 <?php
   //include ("ic.MatriculaP1.php");
 ?>
 
+=======
+>>>>>>> refs/remotes/origin/master
 <!-- Finish code... -->
 
 <button type="hidden" class="ConfigNetwork" data-toggle="modal" data-target="#NowConfigNetwork"></button>
