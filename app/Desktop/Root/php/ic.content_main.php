@@ -3,10 +3,6 @@
 
 <!-- Start code here... -->
 
-<?php
-  include ("ic.MatriculaP1.php");
-?>
-
 <!-- Finish code... -->
 
 <button type="hidden" class="ConfigNetwork" data-toggle="modal" data-target="#NowConfigNetwork"></button>
