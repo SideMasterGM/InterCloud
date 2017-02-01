@@ -2,14 +2,10 @@
 <input type="hidden" id="content_sm" value="" />
 
 <!-- Start code here... -->
-
-<<<<<<< HEAD
 <?php
-  //include ("ic.MatriculaP1.php");
+  include ("ic.test.php");
 ?>
 
-=======
->>>>>>> refs/remotes/origin/master
 <!-- Finish code... -->
 
 <button type="hidden" class="ConfigNetwork" data-toggle="modal" data-target="#NowConfigNetwork"></button>
