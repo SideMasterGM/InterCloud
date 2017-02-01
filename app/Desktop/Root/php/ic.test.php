@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+<?php 
+  
+  include "../graphic/ic.enrollment1.php";
+
+?>
+=======
 <div class="wrap">
   <h1 id="h1" style="text-align: center">Matricula</h1>
   <form class="form-horizontal" method="post" action="rb.mat.php">
@@ -83,3 +90,4 @@
     </div>
   </form>
 </div>
+>>>>>>> 427c73e9122c607196536429c1380cbf201e87e2
