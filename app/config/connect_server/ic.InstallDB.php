@@ -98,6 +98,12 @@
 			date_log DATE NOT NULL, 
 			date_log_unix VARCHAR(100) NOT NULL
 		)",
+		#He agregado una nueva tabla
+		$X.'services' => "CREATE TABLE ".$X."services (
+			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+			name VARCHAR(50) NOT NULL,
+			state INT NOT NULL
+		)",
 		$X.'matricula' => "CREATE TABLE ".$X."matricula (
 			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 			name VARCHAR(255) NOT NULL,
@@ -113,9 +119,9 @@
 		$X.'countries' => "CREATE TABLE ".$X."countries (
 			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 			title VARCHAR(255) NOT NULL,
+			date_log DATE NOT NULL, 
 			date_log_unix VARCHAR(100) NOT NULL
-		)",
-
+		)"
 	);
 
 	$cont = 0; //$errors = 0; 

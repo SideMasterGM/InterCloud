@@ -24,25 +24,10 @@
       <label for="inputNacionalidad" class="col-sm-2 control-label">Nacionalidad</label>
       <div class="col-xs-6">
         <select name="nacionalidad" class="form-control">
-          <?php 
-            $query = "SELECT * FROM countries";
-            $select_countries = mysqli_query($IC, $query);
           
-            if (!$select_categories){
-              die("QUERY FAILED" . mysqli_error($IC));
-            }
-          
-            while($row = mysqli_fetch_assoc($select_categories)){
-              $id = $row['id'];
-              $title = $row['title'];
-          ?>
-          <option value="<?php echo $id; ?>"><?php echo utf8_encode($title); ?></option>
-          <?php
-              }
-          ?> 
         </select> 
       </div>
-    </div> -->
+    </div>
     <div class="form-group">
       <label for="inputCedula" class="col-sm-2 control-label">Cedula</label>
       <div class="col-xs-6">
