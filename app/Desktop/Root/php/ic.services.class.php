@@ -2,6 +2,9 @@
 	$fn = "../../../config/Config.tcb";
 	include ("../../../config/connect_server/ic.connect_server.php");
 
+	#Author: Jerson A. Martínez M. (Side Master).
+	#Class: Services and Network.
+
 	class Services {
 		var $NetworkState, $MySQLState, $ApacheState;
 		var $IC, $X;
