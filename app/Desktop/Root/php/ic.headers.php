@@ -30,7 +30,7 @@
               <a href="#" style="width: 250px; padding: 10px;">
                 Apagar | Iniciar Red
                 <div class="switch switch-info round switch-inline" style="position: absolute; right: 10px; margin-top: -3px;">
-                    <input id="IniciarApagarRH" type="checkbox" checked="">
+                    <input id="IniciarApagarRH" type="checkbox">
                     <label for="IniciarApagarRH" id="dropdown-Network" class="notification" data-note-stack="stack_bottom_right" data-note-style="success"></label>
                     <input type="hidden" id="SwitchNetwork" value="Off">
                 </div>

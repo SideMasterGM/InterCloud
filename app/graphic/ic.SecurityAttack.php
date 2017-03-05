@@ -43,4 +43,4 @@
   </section>
 </div>
 
-<?php include ("app/core/ic.foot.php"); ?>
+<?php include (PD_CORE."/ic.foot.php"); ?>

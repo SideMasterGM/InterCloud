@@ -39,13 +39,13 @@
 
                 <div class="row table-layout">
                   <div class="col-xs-3 p20 pv15 va-m br-r bg-light">
-                    <img class="br-a bw4 br-grey img-responsive center-block" src="app/controller/src/plugins/assets/img/avatars/SM.JPG" title="AdminDesigns Logo">
+                    <img class="br-a bw4 br-grey img-responsive center-block" src="app/controller/src/logo/user.png" title="AdminDesigns Logo">
                   </div>
                   <div class="col-xs-9 p20 pv15 va-m bg-light">
 
                     <h3 class="mb5"><?php echo @$GameResult['usr']; ?>
                       <small> - Logueado 
-                        <b> 
+                        <b>
                           <?php 
                           $GetLogout = "SELECT * FROM ".$X."control_logout WHERE usr='".@$GameResult['usr']."' AND ip='".$Config->getIpAddr()."' AND remember='1' ORDER BY id DESC LIMIT 1;";
 
@@ -57,7 +57,7 @@
                     </h3>
 
                     <?php
-                        include ("app/controller/php/ic.KnowPrivilege.php");                      
+                        include ("app/controller/php/ic.KnowPrivilege.php");        
                     ?>
 
                     <p class="text-muted"> <?php echo $Privilege; ?> </p>

@@ -3,16 +3,16 @@
   <li class="sidebar-label pt20">Menu</li>
   <li>
     <a href="pages_calendar.html">
-      <span class="fa fa-calendar"></span>
-      <span class="sidebar-title">...</span>
+      <span class="glyphicon glyphicon-book"></span>
+      <span class="sidebar-title">Documentación</span>
       <span class="sidebar-title-tray">
-        <span class="label label-xs bg-primary">...</span>
+        <span class="label label-xs bg-primary">NEW</span>
       </span>
     </a>
   </li>
   <li>
     <a href="http://admindesigns.com/demos/absolute/README/index.html">
-      <span class="glyphicon glyphicon-book"></span>
+      <span class="fa fa-calendar"></span>
       <span class="sidebar-title">...</span>
     </a>
   </li>

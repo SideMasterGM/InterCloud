@@ -39,7 +39,7 @@
 					$error = false;
 				}
 			} else {
-				$this->CreateFile();
+				$this->CreateFile($fn);
 			}
 
 			/*Si todo va bien, entonces $error tiene un valor falso,
@@ -87,4 +87,5 @@
 	    }
 
 	}
+
 ?>

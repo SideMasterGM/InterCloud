@@ -31,6 +31,7 @@
 	define ("PD_CONTROLLER",$Path."/app/controller");
 		define ("PD_CONTROLLER_JS", 	$Path."/app/controller/js");
 		define ("PD_CONTROLLER_PHP", 	$Path."/app/controller/php");
+		define ("PD_CONTROLLER_SRC", 	$Path."/app/controller/src");
 	
 	define ("PD_CORE", 		$Path."/app/core");
 		define ("PD_CORE_SERVICES", $Path."/app/core/Services");

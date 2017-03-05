@@ -14,7 +14,7 @@
 		#En caso de no existir este podría estar en otra ubicación, 
 		#de tal forma que se escribe una nueva ruta.
 		$t = $_SERVER['DOCUMENT_ROOT']."/app/config/Config.tcb";
-	} 
+	}
 
 	#Se captura el estado de la variable error.
 	$error = false;

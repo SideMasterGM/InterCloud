@@ -4,8 +4,14 @@
 		<?php
 			#Author: Jerson Martínez (Side Master)
 		
-			#Inclusión de constantes que contienen las rutas de acceso.
-			include ($_SERVER['DOCUMENT_ROOT']."/".explode("/", $_SERVER['REQUEST_URI'])[1]."/app/core/ic.const.php"); 
+			#Inclusión de constantes que contienen las rutas de acceso. 
+			$Const = $_SERVER['DOCUMENT_ROOT']."/".explode("/", $_SERVER['REQUEST_URI'])[1]."app/core/ic.const.php";
+			if (!file_exists($Const))
+				$Const = $_SERVER['DOCUMENT_ROOT']."/".explode("/", $_SERVER['REQUEST_URI'])[1]."/app/core/ic.const.php";
+			
+			include ($Const);
+
+			// echo $Const;
 
 			#Se agrega el head del core, utilizando la constante PF_CORE_HEAD.
 			include (PF_CORE_HEAD); 
@@ -13,6 +19,11 @@
 	</head>
 	<body class="external-page sb-l-c sb-r-c">
 		<?php
+
+			echo $Const;
+			echo PF_CORE_HEAD;
+			echo PF_CONNECT_SERVER;
+			echo PD_CONTROLLER_PHP;
 
 			#Se incluye el fichero de conexión, siguiendo la clase ConfigFile.
 			include (PF_CONNECT_SERVER);
@@ -111,6 +122,8 @@
 											include (PD_GRAPHIC."/ic.SecurityAttack.php");
 										}	
 									}
+
+									echo PD_GRAPHIC;
 
 								} else {
 									goto Funcionamiento;

@@ -16863,6 +16863,7 @@ ol.timeline-list li.timeline-item .timeline-date {
   border-width: 3px !important;
 }
 .bw4 {
+  border-radius: 50% 50%;
   border-width: 4px !important;
 }
 .bw5 {
